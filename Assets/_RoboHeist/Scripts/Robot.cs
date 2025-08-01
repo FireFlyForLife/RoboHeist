@@ -9,6 +9,7 @@ public class Robot : MoveableTileEntity
     public RobotConfig config;
     public InstructionQueue instructionQueue;
     public float executionDelay = 1.0f; // In seconds
+    public UInt16 basePointer = 0x3181;
 
     [SerializeField]
     private RobotState currentState = RobotState.Idle;
@@ -44,10 +45,16 @@ public class Robot : MoveableTileEntity
 
     private void StartRobotBehaviour(RobotState newState)
     {
+        // Stop old running state
         if (instructionRunner != null)
         {
             StopCoroutine(instructionRunner);
         }
+
+        // Update state so new runner has only sees the new state
+        currentState = newState;
+
+        // Start new runner
         if (newState == RobotState.Running)
         {
             instructionRunner = StartCoroutine(ExecuteInstructions());

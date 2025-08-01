@@ -154,6 +154,7 @@ MonoBehaviour:
   instructionQueue:
     instructionCounter: 0
   executionDelay: 1.5
+  basePointer: 0
   currentState: 0
 --- !u!4 &154155837
 Transform:
@@ -344,6 +345,7 @@ MonoBehaviour:
   instructionQueue:
     instructionCounter: 0
   executionDelay: 1
+  basePointer: 12673
   currentState: 1
 --- !u!4 &356806347
 Transform:
@@ -637,7 +639,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SingleInstructionUI: {fileID: 9197481963319205126, guid: 174957bda14a8a24cad55790c6e940a5, type: 3}
-  BackupSprite: {fileID: -357415847780348738, guid: 26edc0aaf4561e14f824e5f4b213837b, type: 3}
+  ForwardSprite: {fileID: -357415847780348738, guid: 26edc0aaf4561e14f824e5f4b213837b, type: 3}
+  LeftSprite: {fileID: 1309945655532641325, guid: 26edc0aaf4561e14f824e5f4b213837b, type: 3}
+  RightSprite: {fileID: -2478050544971688687, guid: 26edc0aaf4561e14f824e5f4b213837b, type: 3}
   VisualizingRobot: {fileID: 356806346}
 --- !u!114 &549450642
 MonoBehaviour:

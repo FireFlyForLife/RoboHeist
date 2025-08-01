@@ -56,9 +56,19 @@ public class InstructionQueue
         instructionCounter = 0;
     }
 
-    public ReadOnlySpan<Instruction> GetCurrentInstructions()
+    public ReadOnlySpan<Instruction> GetAllInstructions()
     {
         return instructions;
+    }
+
+    public int GetInstructionPointer()
+    {
+        return instructionCounter;
+    }
+
+    public void SetInstructionPointer(int instructionIndex)
+    {
+        instructionCounter = Math.Abs(instructionIndex % instructions.Length);
     }
 
     private Instruction GetInstruction(Direction direction, bool loop)
