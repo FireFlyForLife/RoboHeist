@@ -61,6 +61,12 @@ public class InstructionQueue
         return instructions;
     }
 
+    public void SetInstructions(Instruction[] visualizedInstructions)
+    {
+        instructions = visualizedInstructions;
+        SetInstructionPointer(instructionCounter);
+    }
+
     public int GetInstructionPointer()
     {
         return instructionCounter;

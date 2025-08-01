@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mono.Cecil.Cil;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -19,11 +20,13 @@ public class RobotInstructionUI : MonoBehaviour
 	private UIDocument uiDocument;
 	private VisualElement ui;
 	private VisualElement instructionListContainer;
-	private Instruction[] visualizedInstructions;
+	private List<Instruction> visualizedInstructions;
 
 	// Drag n drop
 	private bool draggingInstructionPointer = false;
 	private RobotState lastRobotState;
+    private bool draggingInstruction = false;
+    private Instruction draggedInstruction = null;
 
 	void Start()
 	{
@@ -48,7 +51,7 @@ public class RobotInstructionUI : MonoBehaviour
 	private void OnInstructionPointerMouseDown(PointerDownEvent e, int instructionIndex)
 	{
 		// On left mouse button
-		if (e.button != (int)MouseButton.LeftMouse)
+		if (draggingInstruction || e.button != (int)MouseButton.LeftMouse)
 			return;
 
 		// Start dragging
@@ -85,7 +88,7 @@ public class RobotInstructionUI : MonoBehaviour
     private void OnInstructionPointerMouseMove(PointerMoveEvent e, int originalInstructionIndex)
 	{
         // Only handle left mouse buttons dragging
-        if (!draggingInstructionPointer /*|| e.button != (int)MouseButton.LeftMouse*/)
+        if (!draggingInstructionPointer)
 			return;
 
         // Get the element under the mouse
@@ -98,7 +101,7 @@ public class RobotInstructionUI : MonoBehaviour
     private void OnInstructionPointerMouseUp(PointerUpEvent e, int originalInstructionIndex)
     {
         // Only handle dragging left mouse button up
-        if (!draggingInstructionPointer /*|| e.button != (int)MouseButton.LeftMouse*/) 
+        if (!draggingInstructionPointer) 
 			return;
 
 		// Stop dragging
@@ -118,7 +121,81 @@ public class RobotInstructionUI : MonoBehaviour
         e.StopPropagation();
     }
 
-	void Update()
+    private void OnInstructionMouseDown(PointerDownEvent e, int instructionIndex)
+    {
+        // On left mouse button
+        if (draggingInstructionPointer || e.button != (int)MouseButton.LeftMouse)
+            return;
+
+        // Start dragging
+        draggingInstruction = true;
+        instructionListContainer[instructionIndex].CapturePointer(e.pointerId);
+        draggedInstruction = visualizedInstructions[instructionIndex];
+
+        // Pause robot execution
+        lastRobotState = VisualizingRobot.CurrentState;
+        VisualizingRobot.CurrentState = RobotState.Idle;
+
+        // We processed this event
+        e.StopPropagation();
+    }
+
+    private void OnInstructionMouseMove(PointerMoveEvent e)
+    {
+        // Only handle left mouse buttons dragging
+        if (!draggingInstruction)
+            return;
+
+        // Get the element under the mouse
+        // move the instruction
+        int hoveredInstructionIndex = InstructionUnderMouse(e.position);
+        if (hoveredInstructionIndex != -1)
+        {
+            int dragged_instruction_index = visualizedInstructions.IndexOf(draggedInstruction);
+            //if (hoveredInstructionIndex > dragged_instruction_index)
+            //    hoveredInstructionIndex--;
+
+            visualizedInstructions.Remove(draggedInstruction);
+            visualizedInstructions.Insert(hoveredInstructionIndex, draggedInstruction);
+            VisualizingRobot.instructionQueue.SetInstructions(visualizedInstructions.ToArray());
+        }
+    }
+
+    private void OnInstructionMouseUp(PointerUpEvent e)
+    {
+        // Only handle dragging left mouse button up
+        if (!draggingInstruction)
+            return;
+
+        // Stop dragging
+        draggingInstruction = false;
+        int dragged_instruction_index = visualizedInstructions.IndexOf(draggedInstruction);
+        foreach (var entryUI in instructionListContainer.Children())
+            entryUI.ReleasePointer(e.pointerId);
+
+        // Get the element under the mouse
+        // Move the instruction for the final time
+        int hoveredInstructionIndex = InstructionUnderMouse(e.position);
+        if (hoveredInstructionIndex != -1)
+        {
+            //if (hoveredInstructionIndex > dragged_instruction_index)
+            //    hoveredInstructionIndex--;
+
+            visualizedInstructions.Remove(draggedInstruction);
+            visualizedInstructions.Insert(hoveredInstructionIndex, draggedInstruction);
+            VisualizingRobot.instructionQueue.SetInstructions(visualizedInstructions.ToArray());
+        }
+
+        draggedInstruction = null;
+
+        // Continue running, will directly execute the instruction at the instruction pointer
+        VisualizingRobot.CurrentState = lastRobotState;
+
+        // Handled event
+        e.StopPropagation();
+    }
+
+    void Update()
 	{
 		if (VisualizingRobot == null)
 		{
@@ -137,14 +214,14 @@ public class RobotInstructionUI : MonoBehaviour
 		{
             // Destroy old ui
             instructionListContainer.Clear();
-			visualizedInstructions = all_instructions;
+			visualizedInstructions = new();
 			return;
 		}
 		if (visualizedInstructions == null || !visualizedInstructions.SequenceEqual(all_instructions))
 		{
 			// Destroy old ui
             instructionListContainer.Clear();
-            visualizedInstructions = all_instructions;
+            visualizedInstructions = new(all_instructions);
 
 			for (int i = 0; i < all_instructions.Length; i++)
 			{
@@ -160,19 +237,24 @@ public class RobotInstructionUI : MonoBehaviour
 				entryUI.Q("InstructionPointer").RegisterCallback<PointerDownEvent>((e) => OnInstructionPointerMouseDown(e, i_copy_so_it_gets_copied_by_value_in_the_lambda));
                 entryUI.Q("InstructionPointer").RegisterCallback<PointerMoveEvent>((e) => OnInstructionPointerMouseMove(e, i_copy_so_it_gets_copied_by_value_in_the_lambda));
                 entryUI.Q("InstructionPointer").RegisterCallback<PointerUpEvent>((e) => OnInstructionPointerMouseUp(e, i_copy_so_it_gets_copied_by_value_in_the_lambda));
-            }
+                entryUI.RegisterCallback<PointerDownEvent>((e) => OnInstructionMouseDown(e, i_copy_so_it_gets_copied_by_value_in_the_lambda));
+                entryUI.RegisterCallback<PointerMoveEvent>((e) => OnInstructionMouseMove(e));
+                entryUI.RegisterCallback<PointerUpEvent>((e) => OnInstructionMouseUp(e));
+			}
         }
 
 		// Update values
         if (VisualizingRobot.instructionQueue != null)
 		{
+            Debug.Log($"Updating ui, while {draggingInstruction}");
             for (int i = 0; i < all_instructions.Length; i++)
 			{
 				Instruction instruction = all_instructions[i];
 				VisualElement entryUI = instructionListContainer[i];
+                entryUI.dataSource = instruction;
 
-				// Update instruction pointer indicator
-				bool is_executing_instruction = (i == VisualizingRobot.instructionQueue.GetInstructionPointer()-1);
+                // Update instruction pointer indicator
+                bool is_executing_instruction = (i == VisualizingRobot.instructionQueue.GetInstructionPointer()-1);
 				entryUI.Q("InstructionPointer").visible = is_executing_instruction;
 
 				// Update label and icon
