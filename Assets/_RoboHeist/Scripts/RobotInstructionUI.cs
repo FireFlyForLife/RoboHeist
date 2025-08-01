@@ -44,7 +44,7 @@ public class RobotInstructionUI : MonoBehaviour
 				VisualElement entryUI = instructionListContainer[entryIndex];
 
 				entryUI.Q("Icon").style.backgroundImage = new StyleBackground(BackupSprite);
-				entryUI.Q<Label>("Label").text = instruction.CommandLongForm;
+				entryUI.Q<Label>("Label").text = instruction?.CommandLongForm ?? "NUL";
 			}
 		}
     }
