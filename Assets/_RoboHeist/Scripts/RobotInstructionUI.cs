@@ -246,7 +246,6 @@ public class RobotInstructionUI : MonoBehaviour
 		// Update values
         if (VisualizingRobot.instructionQueue != null)
 		{
-            Debug.Log($"Updating ui, while {draggingInstruction}");
             for (int i = 0; i < all_instructions.Length; i++)
 			{
 				Instruction instruction = all_instructions[i];
