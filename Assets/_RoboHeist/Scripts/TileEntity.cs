@@ -58,6 +58,11 @@ public class TileEntity : MonoBehaviour
         return false;
     }
 
+    public virtual bool IsSolid()
+    {
+        return true;
+    }
+
     // Messages
     protected virtual void Start()
     {
@@ -73,7 +78,8 @@ public class MoveableTileEntity : TileEntity
 {
     public override bool CanBePushed(Vector2Int direction)
     {
-        return TheGrid.Instance.CheckGridPosition(position + direction) == null;
+        var tile = TheGrid.Instance.CheckGridPosition(position + direction);
+        return tile == null || !tile.IsSolid();
     }
 
     public override bool Push(TileEntity pusher, Vector2Int direction)
