@@ -35,13 +35,17 @@ public class RobotInstructionUI : MonoBehaviour
 
         // Repopulate the ui to be in sync with the instruction list
         instructionListContainer.Clear();
-		foreach (var instruction in VisualizingRobot.instructionList)
-		{
-			SingleInstructionUI.CloneTree(instructionListContainer, out var entryIndex, out var _);
-			VisualElement entryUI = instructionListContainer[entryIndex];
 
-            entryUI.Q("Icon").style.backgroundImage = new StyleBackground(instruction.Sprite ?? BackupSprite);
-            entryUI.Q<Label>("Label").text = instruction.Label;
-        }
+		if (VisualizingRobot.instructionQueue != null)
+		{
+			foreach (Instruction instruction in VisualizingRobot.instructionQueue.GetCurrentInstructions())
+			{
+				SingleInstructionUI.CloneTree(instructionListContainer, out var entryIndex, out var _);
+				VisualElement entryUI = instructionListContainer[entryIndex];
+
+				entryUI.Q("Icon").style.backgroundImage = new StyleBackground(BackupSprite);
+				entryUI.Q<Label>("Label").text = instruction.CommandLongForm;
+			}
+		}
     }
 }
