@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
 
-
+/// <summary>
+/// The result of an instruction, did it succeed? Did it succeed with additional data?
+/// </summary>
 public class InstructionResult
 {
-    public GameObject CollisionObject = null;
+    public TileEntity CollisionObject = null;
+    public bool WasBlocked = false;
 }
-
 
 /// <summary>
 /// A single instruction for a robot
@@ -37,8 +39,20 @@ public class MoveForward : Instruction
     public override InstructionResult Execute(Robot robot)
     {
         var dir = robot.direction.AsVec2();
-        robot.position += dir;
-        return new InstructionResult();
+
+        var instructionResult = new InstructionResult();
+
+        instructionResult.CollisionObject = TheGrid.Instance.CheckGridPosition(robot.position + dir);
+        if (instructionResult.CollisionObject != null)
+        {
+            instructionResult.WasBlocked = !instructionResult.CollisionObject.Push(robot, dir);
+        }
+        else
+        {
+            robot.position += dir;
+        }
+
+        return instructionResult;
     }
 }
 

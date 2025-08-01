@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 
-public class Robot : TileEntity
+public class Robot : MoveableTileEntity
 {
     public RobotConfig config;
     public InstructionQueue instructionQueue;
