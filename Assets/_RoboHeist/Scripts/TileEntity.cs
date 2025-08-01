@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum Direction : int
@@ -41,6 +42,117 @@ public static class DirectionExtensions
     }
 }
 
+[Serializable]
+public abstract class TileEntityData
+{
+    // Variables
+    public Direction direction = Direction.Up;
+    public Vector2Int position;
+
+    public virtual bool CanBePushed(Vector2Int direction)
+    {
+        return false;
+    }
+
+    public virtual bool Push(TileEntity pusher, Vector2Int direction)
+    {
+        // By default all entities are static and immovable.
+        return false;
+    }
+}
+
+[Serializable]
+public abstract class MoveableEntityData : TileEntityData
+{
+    public override bool CanBePushed(Vector2Int direction)
+    {
+        return TheGrid.Instance.CheckGridPosition(position + direction) == null;
+    }
+
+    public override bool Push(TileEntity pusher, Vector2Int direction)
+    {
+        if (CanBePushed(direction))
+        {
+            pusher.position += direction;
+            position += direction;
+            return true;
+        }
+        return false;
+    }
+}
+
+[Serializable]
+public class RobotEntityData : MoveableEntityData
+{
+    public RobotConfig robotConfig;
+    public InstructionQueue instructionQueue;
+    public float executionDelay = 1.0f; // In seconds
+    public RobotState currentState = RobotState.Idle;
+}
+
+[Serializable]
+public class WallEntityData : TileEntityData
+{
+}
+
+
+
+public abstract class TileEntityBehaviour : MonoBehaviour
+{
+    protected abstract TileEntityData GetTileEntityData();
+
+    // Messages
+    protected virtual void Start()
+    {
+        // One time position set for static entities.
+        Vector2 gridSize = TheGrid.Instance.TileSize;
+        var entityData = GetTileEntityData();
+        TheGrid.Instance.RegisterAtPosition(entityData, entityData.position);
+        transform.localPosition = new Vector3((float)entityData.position.x * gridSize.x, 0.0f, (float)entityData.position.y * gridSize.y);
+        transform.localRotation = Quaternion.AngleAxis((int)entityData.direction * 90.0f, Vector3.up);
+    }
+}
+
+public abstract class MoveableEntityBehaviour : TileEntityBehaviour
+{
+    protected virtual void Update()
+    {
+        // TODO: interpolate
+
+        // One time position set for static entities.
+        Vector2 gridSize = TheGrid.Instance.TileSize;
+        var entityData = GetTileEntityData();
+        TheGrid.Instance.RegisterAtPosition(entityData, entityData.position);
+        transform.localPosition = new Vector3((float)entityData.position.x * gridSize.x, 0.0f, (float)entityData.position.y * gridSize.y);
+        transform.localRotation = Quaternion.AngleAxis((int)entityData.direction * 90.0f, Vector3.up);
+    }
+}
+
+//public class RobotEntityBehaviour : TileEntityBehaviour
+//{
+//    [SerializeReference, SubclassSelector]
+//    public new RobotEntityData entityData;
+
+//    private Coroutine instructionRunner = null;
+
+//    public RobotState CurrentState
+//    {
+//        get => entityData.currentState;
+//        set
+//        {
+//            if (entityData.currentState == value)
+//            {
+//                return;
+//            }
+
+//            StartRobotBehaviour(value);
+//            entityData.currentState = value;
+//        }
+//    }
+
+//    public IEnumerator<Instruction> Instructions { get; set; }
+//}
+
 public class TileEntity : MonoBehaviour
 {
     // Variables
@@ -69,6 +181,7 @@ public class TileEntity : MonoBehaviour
     }
 }
 
+[Serializable]
 public class MoveableTileEntity : TileEntity
 {
     public override bool CanBePushed(Vector2Int direction)
