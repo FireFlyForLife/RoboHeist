@@ -1,78 +1,77 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-
-/// <summary>
-/// A single instruction for a robot
-/// </summary>
-[Serializable]
-public abstract class Instruction
-{
-    public abstract void Execute(Robot robot);
-}
-
-public class MoveForward : Instruction
-{
-    public override void Execute(Robot robot)
-    {
-        var dir = robot.direction.AsVec2();
-        robot.position += dir;
-    }
-}
-
-public class TurnLeft : Instruction
-{
-    public override void Execute(Robot robot)
-    {
-        robot.direction = robot.direction.TurnedLeft();
-    }
-}
-
-public class TurnRight : Instruction
-{
-    public override void Execute(Robot robot)
-    {
-        robot.direction = robot.direction.TurnedRight();
-    }
-}
-
 
 
 public class Robot : TileEntity
 {
-    public List<Instruction> instructionList = new();
+    public RobotConfig config;
+    public InstructionQueue instructionQueue;
     public float executionDelay = 1.0f; // In seconds
 
-    private float lastExecution = float.MinValue;
-    private int instructionPointer = 0;
+    [SerializeField]
+    private RobotState currentState = RobotState.Idle;
+
+    private Coroutine instructionRunner = null;
+
+    public RobotState CurrentState
+    {
+        get => currentState;
+        set
+        {
+            if (currentState == value)
+            {
+                return;
+            }
+
+            StartRobotBehaviour(value);
+            currentState = value;
+        }
+    }
+
+    public IEnumerator<Instruction> Instructions { get; set; }
 
     protected override void Start()
     {
         base.Start();
+        //instructionQueue = new Instruction[baseInstructions.InstructionQueue.Length];
+        //baseInstructions.InstructionQueue.CopyTo(instructionQueue, 0);
 
-        // TODO: Make this customizable
-        instructionList.Add(new MoveForward());
-        instructionList.Add(new TurnRight());
-        instructionList.Add(new MoveForward());
-        instructionList.Add(new TurnRight());
-        instructionList.Add(new MoveForward());
-        instructionList.Add(new TurnRight());
-        instructionList.Add(new MoveForward());
-        instructionList.Add(new TurnRight());
+        instructionQueue = new InstructionQueue(config.InstructionQueue);
+        StartRobotBehaviour(currentState);
     }
 
-    protected override void Update()
+    private void StartRobotBehaviour(RobotState newState)
     {
-        base.Update();
-
-        if (lastExecution + executionDelay < Time.time)
+        if (instructionRunner != null)
         {
-            lastExecution = Time.time;
-
-            Instruction instruction = instructionList[instructionPointer];
-            instructionPointer = (instructionPointer + 1) % instructionList.Count;
-
-            instruction.Execute(this);
+            StopCoroutine(instructionRunner);
         }
+        if (newState == RobotState.Running)
+        {
+            instructionRunner = StartCoroutine(ExecuteInstructions());
+        }
+        else if (newState == RobotState.Error && config.ErrorHandler != null)
+        {
+            instructionRunner = StartCoroutine(config.ErrorHandler.ExecuteErrorInstructions(this));
+        }
+    }
+
+    private IEnumerator ExecuteInstructions()
+    {
+        Instructions = instructionQueue.GetNextInstruction(true);
+        while (currentState != RobotState.Idle && Instructions.MoveNext())
+        {
+            var instructionResult = Instructions.Current.Execute(this);
+            if (config.ErrorHandler != null && config.ErrorHandler.DetectErrorState(this, instructionResult))
+            {
+                currentState = RobotState.Error;
+            }
+            yield return new WaitForSeconds(executionDelay);
+        }
+
+        CurrentState = RobotState.Idle;
     }
 }
