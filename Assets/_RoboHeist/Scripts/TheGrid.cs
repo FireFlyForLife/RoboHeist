@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class TheGrid : MonoBehaviour
 {
+    public LevelData levelData;
     private Dictionary<Vector2Int, TileEntity> entities = new();
 
     public static TheGrid Instance { get; private set; }
@@ -27,6 +28,10 @@ public class TheGrid : MonoBehaviour
         }
     }
 
+    public void RegisterAtPosition(TileEntityData entity, Vector2Int position)
+    {
+    }
+
     public TileEntity CheckGridPosition(Vector2Int position)
     {
         TileEntity entity;
@@ -36,6 +41,5 @@ public class TheGrid : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        grid = GetComponent<Grid>();
     }
 }
