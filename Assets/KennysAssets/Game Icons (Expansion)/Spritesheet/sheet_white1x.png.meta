@@ -1,0 +1,2304 @@
+fileFormatVersion: 2
+guid: 2d0fecf46457f7f4886307b6619ce2a6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3178169448287361132
+    second: DPAD.png
+  - first:
+      213: 8738977406050559319
+    second: DPAD_all.png
+  - first:
+      213: -3070363595898024927
+    second: DPAD_down.png
+  - first:
+      213: 8514842554172614591
+    second: DPAD_left.png
+  - first:
+      213: -2315823751386371623
+    second: DPAD_right.png
+  - first:
+      213: 5030986704824282795
+    second: DPAD_up.png
+  - first:
+      213: -6549778809828840350
+    second: car.png
+  - first:
+      213: -8443198914927723566
+    second: cloud.png
+  - first:
+      213: 8168204957067433489
+    second: cloudUpload.png
+  - first:
+      213: 2665230048028316187
+    second: coin.png
+  - first:
+      213: -2086096329796729710
+    second: controllerTilt.png
+  - first:
+      213: -3710046568333754151
+    second: controllerTilt_left.png
+  - first:
+      213: -4577068197968684025
+    second: controllerTilt_right.png
+  - first:
+      213: -5029408727086275002
+    second: cpu.png
+  - first:
+      213: -5953348466652540503
+    second: cursor.png
+  - first:
+      213: -8692044372925279137
+    second: deviceTilt.png
+  - first:
+      213: 8659267516688308045
+    second: deviceTilt_left.png
+  - first:
+      213: 577050667003169361
+    second: deviceTilt_right.png
+  - first:
+      213: -3917580211315773370
+    second: diamond.png
+  - first:
+      213: 2736255668789036928
+    second: download.png
+  - first:
+      213: -3662550279146976885
+    second: fightFist.png
+  - first:
+      213: -3169547245438540783
+    second: fightFist_circle.png
+  - first:
+      213: 2200192519544869083
+    second: fightJ.png
+  - first:
+      213: 1180528820813115990
+    second: fightJoy_00.png
+  - first:
+      213: -3604442265875541553
+    second: fightJoy_01.png
+  - first:
+      213: 5695731771182952053
+    second: fightJoy_02.png
+  - first:
+      213: 3405735903167750090
+    second: fightJoy_03.png
+  - first:
+      213: -6603208282913840047
+    second: fightJoy_04.png
+  - first:
+      213: 8810600666512385613
+    second: fightJoy_05.png
+  - first:
+      213: -3543738646323476518
+    second: fightJoy_06.png
+  - first:
+      213: 2592208556732919132
+    second: fightJoy_07.png
+  - first:
+      213: 3910918649419275981
+    second: fightJoy_08.png
+  - first:
+      213: -2714205052392777600
+    second: fightJoy_09.png
+  - first:
+      213: -7451142593402810158
+    second: fightJoy_10.png
+  - first:
+      213: 2797788937296396918
+    second: fightJoy_11.png
+  - first:
+      213: -4774546381023741270
+    second: fightJoy_12.png
+  - first:
+      213: -8421392182687908998
+    second: fightJoy_13.png
+  - first:
+      213: -5570441195101944666
+    second: fightJoy_14.png
+  - first:
+      213: 3196985554483372517
+    second: fightJoy_15.png
+  - first:
+      213: -4576454802394369910
+    second: fightJoy_16.png
+  - first:
+      213: -3133144860512727672
+    second: fightJoy_17.png
+  - first:
+      213: 1691170753334542755
+    second: fightJoy_18.png
+  - first:
+      213: 5611408238478012526
+    second: fightJoy_19.png
+  - first:
+      213: -1287011463208437495
+    second: fightJoy_20.png
+  - first:
+      213: -1351907538627417114
+    second: fightJoy_21.png
+  - first:
+      213: 2508953516558760524
+    second: fightJoy_22.png
+  - first:
+      213: -4745836998429348889
+    second: fightJoy_23.png
+  - first:
+      213: 3392915267102573724
+    second: fightJoy_24.png
+  - first:
+      213: 4068989635963556491
+    second: fightJoy_25.png
+  - first:
+      213: -8139553526295435500
+    second: fightJoy_26.png
+  - first:
+      213: -5607427914791543779
+    second: fightJoy_27.png
+  - first:
+      213: 5994740918411702012
+    second: fightJoy_28.png
+  - first:
+      213: 4109111980347970433
+    second: fightJoy_29.png
+  - first:
+      213: -7970293142591041115
+    second: fightJoy_30.png
+  - first:
+      213: -6381374054621337178
+    second: fightJoy_31.png
+  - first:
+      213: 7723101650088593385
+    second: figurine.png
+  - first:
+      213: 7390574790468312468
+    second: fistPlus.png
+  - first:
+      213: 5462476382570759454
+    second: flag.png
+  - first:
+      213: 7023243169575057824
+    second: joystick.png
+  - first:
+      213: 314373517011917747
+    second: joystickL_side.png
+  - first:
+      213: -1381752171962393830
+    second: joystickL_top.png
+  - first:
+      213: -2581070667061233122
+    second: joystickLeft.png
+  - first:
+      213: 925588351578840387
+    second: joystickR_side.png
+  - first:
+      213: 8006895818440511825
+    second: joystickR_top.png
+  - first:
+      213: 443104393006425266
+    second: joystickRight.png
+  - first:
+      213: 4997544919642174625
+    second: key.png
+  - first:
+      213: 206331191094941871
+    second: keyLarge.png
+  - first:
+      213: -2718947971018115674
+    second: keyLarge_3d.png
+  - first:
+      213: 3714617453829662852
+    second: keySmall.png
+  - first:
+      213: -7032855180279105118
+    second: keySmall_3d.png
+  - first:
+      213: 7259958804768897625
+    second: mouse.png
+  - first:
+      213: 1008876397437564271
+    second: mouseLeft.png
+  - first:
+      213: 5435724611192183137
+    second: mouseMiddle.png
+  - first:
+      213: -6338779661156348771
+    second: mouseRight.png
+  - first:
+      213: -1290150330657957927
+    second: pointer.png
+  - first:
+      213: 58206948193149485
+    second: toolBrush.png
+  - first:
+      213: 9060950763947426857
+    second: toolEraser.png
+  - first:
+      213: -5172414078979551232
+    second: toolFill.png
+  - first:
+      213: 5681871280020704674
+    second: toolPencil.png
+  - first:
+      213: -4374078953440099926
+    second: upload.png
+  - first:
+      213: -6904061327062079052
+    second: userRobot.png
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DPAD.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49725d6b9bfd4e3d0800000000000000
+      internalID: -3178169448287361132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DPAD_all.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755eec356a5174970800000000000000
+      internalID: 8738977406050559319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DPAD_down.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c0537b390e365d0800000000000000
+      internalID: -3070363595898024927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DPAD_left.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7a6df703cca2670800000000000000
+      internalID: 8514842554172614591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DPAD_right.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9e330619a8cdfd0800000000000000
+      internalID: -2315823751386371623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DPAD_up.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baea3c2b0c7a1d540800000000000000
+      internalID: 5030986704824282795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c65caefd28a15a0800000000000000
+      internalID: -6549778809828840350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloud.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dbf4c3225bb3da80800000000000000
+      internalID: -8443198914927723566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cloudUpload.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116d696a12b4b5170800000000000000
+      internalID: 8168204957067433489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12dc619b9cccf420800000000000000
+      internalID: 2665230048028316187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controllerTilt.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294483fc072bc03e0800000000000000
+      internalID: -2086096329796729710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controllerTilt_left.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d04f428d44438cc0800000000000000
+      internalID: -3710046568333754151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controllerTilt_right.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70cd65b69bcfa70c0800000000000000
+      internalID: -4577068197968684025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cpu.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 646e5cfd863f33ab0800000000000000
+      internalID: -5029408727086275002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a11f0d9c15716da0800000000000000
+      internalID: -5953348466652540503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deviceTilt.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f541bdbf1b7af5780800000000000000
+      internalID: -8692044372925279137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deviceTilt_left.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47194b7de5eb2870800000000000000
+      internalID: 8659267516688308045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deviceTilt_right.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a40283688120800800000000000000
+      internalID: 577050667003169361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: diamond.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6407c65dd85f1a9c0800000000000000
+      internalID: -3917580211315773370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: download.png
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087c1d0980229f520800000000000000
+      internalID: 2736255668789036928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightFist.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b89cf671de10c2dc0800000000000000
+      internalID: -3662550279146976885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightFist_circle.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11461d0c2918304d0800000000000000
+      internalID: -3169547245438540783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJ.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd091fc7077a88e10800000000000000
+      internalID: 2200192519544869083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_00.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6523da335b4126010800000000000000
+      internalID: 1180528820813115990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_01.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc195193bd27afdc0800000000000000
+      internalID: -3604442265875541553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_02.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e244d5edd4b0f40800000000000000
+      internalID: 5695731771182952053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_03.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf9b1372ca934f20800000000000000
+      internalID: 3405735903167750090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_04.png
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154e00f4d01bc54a0800000000000000
+      internalID: -6603208282913840047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_05.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d466a4920aa854a70800000000000000
+      internalID: 8810600666512385613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_06.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7c0190a7c12dec0800000000000000
+      internalID: -3543738646323476518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_07.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d2bcfb2ff59f320800000000000000
+      internalID: 2592208556732919132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_08.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce161c6acf564630800000000000000
+      internalID: 3910918649419275981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_09.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088de84a2e4355ad0800000000000000
+      internalID: -2714205052392777600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_10.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d051750a49389890800000000000000
+      internalID: -7451142593402810158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_11.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 672c114173eb3d620800000000000000
+      internalID: 2797788937296396918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_12.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaaf373fc576dbdb0800000000000000
+      internalID: -4774546381023741270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_13.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7bb2a4ad64312b80800000000000000
+      internalID: -8421392182687908998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_14.png
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a40fbb1f31d1b2b0800000000000000
+      internalID: -5570441195101944666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_15.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e169076c69fd5c20800000000000000
+      internalID: 3196985554483372517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_16.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8037a4ba9a2d70c0800000000000000
+      internalID: -4576454802394369910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_17.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d4c477955d484d0800000000000000
+      internalID: -3133144860512727672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_18.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1090707de387710800000000000000
+      internalID: 1691170753334542755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_19.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60be28ff0abfdd40800000000000000
+      internalID: 5611408238478012526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_20.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 909fa91a4ed932ee0800000000000000
+      internalID: -1287011463208437495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_21.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eba0fe914f0d3de0800000000000000
+      internalID: -1351907538627417114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_22.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ab3782ee791d220800000000000000
+      internalID: 2508953516558760524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_23.png
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb66baf466632eb0800000000000000
+      internalID: -4745836998429348889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_24.png
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9406a0857e061f20800000000000000
+      internalID: 3392915267102573724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_25.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b829a56f384f77830800000000000000
+      internalID: 4068989635963556491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_26.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417e1ea613f7a0f80800000000000000
+      internalID: -8139553526295435500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_27.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c9d3b550a6e22b0800000000000000
+      internalID: -5607427914791543779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_28.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfead629a19913350800000000000000
+      internalID: 5994740918411702012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_29.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18351fa339f760930800000000000000
+      internalID: 4109111980347970433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_30.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a111208d94d36190800000000000000
+      internalID: -7970293142591041115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fightJoy_31.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9a6677b1ec077a0800000000000000
+      internalID: -6381374054621337178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurine.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e783c13808fd2b60800000000000000
+      internalID: 7723101650088593385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fistPlus.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d12df6d98909660800000000000000
+      internalID: 7390574790468312468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag.png
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e154719145d9ecb40800000000000000
+      internalID: 5462476382570759454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystick.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9b5b5b372977160800000000000000
+      internalID: 7023243169575057824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickL_side.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb19405c01ec5400800000000000000
+      internalID: 314373517011917747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickL_top.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b9e8e68b703dce0800000000000000
+      internalID: -1381752171962393830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickLeft.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a72a547e13e2cd0800000000000000
+      internalID: -2581070667061233122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickR_side.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34d9818a3b958dc00800000000000000
+      internalID: 925588351578840387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickR_top.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15115b313553e1f60800000000000000
+      internalID: 8006895818440511825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: joystickRight.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b420970919362600800000000000000
+      internalID: 443104393006425266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: key.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4745450a8da5540800000000000000
+      internalID: 4997544919642174625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyLarge.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa81c4700290dd200800000000000000
+      internalID: 206331191094941871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyLarge_3d.png
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a532b8d93b544ad0800000000000000
+      internalID: -2718947971018115674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keySmall.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488abf3b4e8fc8330800000000000000
+      internalID: 3714617453829662852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keySmall_3d.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9b2b6a977466e90800000000000000
+      internalID: -7032855180279105118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a383a611e80c460800000000000000
+      internalID: 7259958804768897625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouseLeft.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 162
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65ba8bfcbf300e00800000000000000
+      internalID: 1008876397437564271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouseMiddle.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 212
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16955f2fbb29f6b40800000000000000
+      internalID: 5435724611192183137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouseRight.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 262
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c0e438b712808a0800000000000000
+      internalID: -6338779661156348771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pointer.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 312
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7974a1c17781ee0800000000000000
+      internalID: -1290150330657957927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolBrush.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 362
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d22238639eacec000800000000000000
+      internalID: 58206948193149485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolEraser.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 412
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924046c76b6febd70800000000000000
+      internalID: 9060950763947426857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolFill.png
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 462
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 000d13fbcc4e738b0800000000000000
+      internalID: -5172414078979551232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolPencil.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2adc02943df0ade40800000000000000
+      internalID: 5681871280020704674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upload.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1c0b0ed562c43c0800000000000000
+      internalID: -4374078953440099926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: userRobot.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9e3f46dc8df20a0800000000000000
+      internalID: -6904061327062079052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 31ab3891555273e46be9a4fb333e7cf5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DPAD.png: -3178169448287361132
+      DPAD_all.png: 8738977406050559319
+      DPAD_down.png: -3070363595898024927
+      DPAD_left.png: 8514842554172614591
+      DPAD_right.png: -2315823751386371623
+      DPAD_up.png: 5030986704824282795
+      car.png: -6549778809828840350
+      cloud.png: -8443198914927723566
+      cloudUpload.png: 8168204957067433489
+      coin.png: 2665230048028316187
+      controllerTilt.png: -2086096329796729710
+      controllerTilt_left.png: -3710046568333754151
+      controllerTilt_right.png: -4577068197968684025
+      cpu.png: -5029408727086275002
+      cursor.png: -5953348466652540503
+      deviceTilt.png: -8692044372925279137
+      deviceTilt_left.png: 8659267516688308045
+      deviceTilt_right.png: 577050667003169361
+      diamond.png: -3917580211315773370
+      download.png: 2736255668789036928
+      fightFist.png: -3662550279146976885
+      fightFist_circle.png: -3169547245438540783
+      fightJ.png: 2200192519544869083
+      fightJoy_00.png: 1180528820813115990
+      fightJoy_01.png: -3604442265875541553
+      fightJoy_02.png: 5695731771182952053
+      fightJoy_03.png: 3405735903167750090
+      fightJoy_04.png: -6603208282913840047
+      fightJoy_05.png: 8810600666512385613
+      fightJoy_06.png: -3543738646323476518
+      fightJoy_07.png: 2592208556732919132
+      fightJoy_08.png: 3910918649419275981
+      fightJoy_09.png: -2714205052392777600
+      fightJoy_10.png: -7451142593402810158
+      fightJoy_11.png: 2797788937296396918
+      fightJoy_12.png: -4774546381023741270
+      fightJoy_13.png: -8421392182687908998
+      fightJoy_14.png: -5570441195101944666
+      fightJoy_15.png: 3196985554483372517
+      fightJoy_16.png: -4576454802394369910
+      fightJoy_17.png: -3133144860512727672
+      fightJoy_18.png: 1691170753334542755
+      fightJoy_19.png: 5611408238478012526
+      fightJoy_20.png: -1287011463208437495
+      fightJoy_21.png: -1351907538627417114
+      fightJoy_22.png: 2508953516558760524
+      fightJoy_23.png: -4745836998429348889
+      fightJoy_24.png: 3392915267102573724
+      fightJoy_25.png: 4068989635963556491
+      fightJoy_26.png: -8139553526295435500
+      fightJoy_27.png: -5607427914791543779
+      fightJoy_28.png: 5994740918411702012
+      fightJoy_29.png: 4109111980347970433
+      fightJoy_30.png: -7970293142591041115
+      fightJoy_31.png: -6381374054621337178
+      figurine.png: 7723101650088593385
+      fistPlus.png: 7390574790468312468
+      flag.png: 5462476382570759454
+      joystick.png: 7023243169575057824
+      joystickL_side.png: 314373517011917747
+      joystickL_top.png: -1381752171962393830
+      joystickLeft.png: -2581070667061233122
+      joystickR_side.png: 925588351578840387
+      joystickR_top.png: 8006895818440511825
+      joystickRight.png: 443104393006425266
+      key.png: 4997544919642174625
+      keyLarge.png: 206331191094941871
+      keyLarge_3d.png: -2718947971018115674
+      keySmall.png: 3714617453829662852
+      keySmall_3d.png: -7032855180279105118
+      mouse.png: 7259958804768897625
+      mouseLeft.png: 1008876397437564271
+      mouseMiddle.png: 5435724611192183137
+      mouseRight.png: -6338779661156348771
+      pointer.png: -1290150330657957927
+      sheet_white1x_0: -860143557
+      sheet_white1x_1: 1866265594
+      sheet_white1x_10: -375054005
+      sheet_white1x_11: -1648733450
+      sheet_white1x_12: -1865385614
+      sheet_white1x_13: 825667076
+      sheet_white1x_14: 1269806935
+      sheet_white1x_15: 817635088
+      sheet_white1x_16: -1546544459
+      sheet_white1x_17: 212470859
+      sheet_white1x_18: 137522173
+      sheet_white1x_19: -975091901
+      sheet_white1x_2: 8790806
+      sheet_white1x_20: 1016223593
+      sheet_white1x_21: -806817293
+      sheet_white1x_22: -933667513
+      sheet_white1x_23: -1125879580
+      sheet_white1x_24: -1715747836
+      sheet_white1x_25: 1418791740
+      sheet_white1x_26: 1895575905
+      sheet_white1x_27: -161520725
+      sheet_white1x_28: -1237065872
+      sheet_white1x_29: 1155053900
+      sheet_white1x_3: 1177192205
+      sheet_white1x_30: -914868740
+      sheet_white1x_31: 1565870160
+      sheet_white1x_32: -1756653062
+      sheet_white1x_33: -1316526510
+      sheet_white1x_34: 1812897829
+      sheet_white1x_35: -1827278438
+      sheet_white1x_36: -1437571740
+      sheet_white1x_37: -581131792
+      sheet_white1x_38: -294121578
+      sheet_white1x_39: -498703897
+      sheet_white1x_4: -1858388307
+      sheet_white1x_40: -1972487157
+      sheet_white1x_41: 804119024
+      sheet_white1x_42: 545956753
+      sheet_white1x_43: 152619716
+      sheet_white1x_44: -162050620
+      sheet_white1x_45: 156279449
+      sheet_white1x_46: -1636692423
+      sheet_white1x_47: -2132914607
+      sheet_white1x_48: 46640037
+      sheet_white1x_49: -784364053
+      sheet_white1x_5: -1444415839
+      sheet_white1x_50: 763243028
+      sheet_white1x_51: -1339278098
+      sheet_white1x_52: -1823864516
+      sheet_white1x_53: -1477455563
+      sheet_white1x_54: 1001829553
+      sheet_white1x_55: -299765682
+      sheet_white1x_56: -1816788059
+      sheet_white1x_57: -675462750
+      sheet_white1x_58: 485015917
+      sheet_white1x_59: 1573907075
+      sheet_white1x_6: 311379935
+      sheet_white1x_60: 2009347381
+      sheet_white1x_61: -1151206808
+      sheet_white1x_62: -1179453753
+      sheet_white1x_63: 384409609
+      sheet_white1x_64: -436393241
+      sheet_white1x_65: 1204802144
+      sheet_white1x_66: -1327013402
+      sheet_white1x_67: -731441966
+      sheet_white1x_68: 259677169
+      sheet_white1x_69: -1589894397
+      sheet_white1x_7: -740313274
+      sheet_white1x_70: 1780977400
+      sheet_white1x_71: -550426989
+      sheet_white1x_72: 51217961
+      sheet_white1x_73: 1160089930
+      sheet_white1x_74: 152623760
+      sheet_white1x_75: 1091871800
+      sheet_white1x_76: -499848683
+      sheet_white1x_77: 603681345
+      sheet_white1x_78: -556889593
+      sheet_white1x_79: 243348530
+      sheet_white1x_8: -139506229
+      sheet_white1x_80: -2124040752
+      sheet_white1x_9: -2098787500
+      toolBrush.png: 58206948193149485
+      toolEraser.png: 9060950763947426857
+      toolFill.png: -5172414078979551232
+      toolPencil.png: 5681871280020704674
+      upload.png: -4374078953440099926
+      userRobot.png: -6904061327062079052
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

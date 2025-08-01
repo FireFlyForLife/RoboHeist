@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_RoboHeist/UI/Robot/RobotInstructionStylesheet.uss?fileID=7433441132597879392&amp;guid=9dff10e6962fb5a4790c11b25935e347&amp;type=3#RobotInstructionStylesheet" />
+    <ui:VisualElement name="InstructionList" style="flex-grow: 1; max-width: 350px; margin-top: 20px; margin-right: 20px; margin-bottom: 20px; margin-left: 20px;" />
+</ui:UXML>

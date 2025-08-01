@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -8,11 +9,20 @@ using UnityEngine;
 [Serializable]
 public abstract class Instruction
 {
+    public string Label = "Instruction";
+    public Sprite Sprite = null;
+
     public abstract void Execute(Robot robot);
+
 }
 
 public class MoveForward : Instruction
 {
+    public MoveForward()
+    {
+        Label = "Move Forward";
+    }
+
     public override void Execute(Robot robot)
     {
         var dir = robot.direction.AsVec2();
@@ -22,6 +32,11 @@ public class MoveForward : Instruction
 
 public class TurnLeft : Instruction
 {
+    public TurnLeft()
+    {
+        Label = "Turn Left";
+    }
+
     public override void Execute(Robot robot)
     {
         robot.direction = robot.direction.TurnedLeft();
@@ -30,6 +45,11 @@ public class TurnLeft : Instruction
 
 public class TurnRight : Instruction
 {
+    public TurnRight()
+    {
+        Label = "Turn Right";
+    }
+
     public override void Execute(Robot robot)
     {
         robot.direction = robot.direction.TurnedRight();

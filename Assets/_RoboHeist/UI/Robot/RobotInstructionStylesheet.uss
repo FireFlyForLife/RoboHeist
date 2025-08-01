@@ -1,0 +1,7 @@
+VisualElement {
+}
+
+.hoverable:hover {
+    -unity-background-image-tint-color: rgb(217, 217, 217);
+    scale: 1.05 1.05;
+}
