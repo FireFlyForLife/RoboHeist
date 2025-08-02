@@ -202,6 +202,7 @@ public class RobotInstructionUI : MonoBehaviour
             Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, float.MaxValue))
         {
             RobotEntityBehaviour robot = hit.collider.GetComponent<RobotEntityBehaviour>();
+            Debug.Log($"Changing Instruction UI to {robot}");
             VisualizingRobot = robot;
         }
 
@@ -209,11 +210,11 @@ public class RobotInstructionUI : MonoBehaviour
 		{
 			// Reset instruction list ui and make invisible
 			instructionListContainer.Clear();
-			uiDocument.enabled = false;
+			//uiDocument.enabled = false;
 			return;
 		}
 
-		uiDocument.enabled = true;
+		//uiDocument.enabled = true;
 
 
 		// Repopulate the ui to be in sync with the instruction list
