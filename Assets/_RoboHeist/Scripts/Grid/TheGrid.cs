@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class TheGrid : MonoBehaviour
 {
     public LevelData levelData;
-    private Dictionary<Vector2Int, TileEntityData> entities = new();
+    private Dictionary<TileEntityData, Vector2Int> entities = new();
 
     public static TheGrid Instance { get; private set; }
 
@@ -26,25 +26,12 @@ public class TheGrid : MonoBehaviour
 
     public void RegisterAtPosition(TileEntityData entity, Vector2Int position)
     {
-        if (!entities.ContainsKey(position))
-        {
-            if (entities.ContainsValue(entity))
-            {
-                Vector2Int existingPosition = entities.FirstOrDefault(pair => pair.Value == entity).Key;
-                entities.Remove(existingPosition);
-            }
-            entities.Add(position, entity);
-        }
+        entities[entity] = position;
     }
 
-    //public void RegisterAtPosition(TileEntityData entity, Vector2Int position)
-    //{
-    //}
-
-    public TileEntityData CheckGridPosition(Vector2Int position)
+    public IEnumerable<TileEntityData> CheckGridPosition(Vector2Int position)
     {
-        TileEntityData entity;
-        return (entities.TryGetValue(position, out entity) ? entity : null);
+        return entities.Where(pair => pair.Value == position).Select(pair => pair.Key);
     }
 
     void Awake()

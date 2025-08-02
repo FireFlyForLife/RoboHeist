@@ -128,6 +128,11 @@ public class LevelDataEditor : PropertyDrawer
                                 tileEntityProp.managedReferenceValue = new WallEntityData();
                                 tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
+                            menu.AddItem(new GUIContent("Simple Door"), tileEntity?.GetType() == typeof(SimpleDoorEntityData), () =>
+                            {
+                                tileEntityProp.managedReferenceValue = new SimpleDoorEntityData();
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
+                            });
                             menu.AddItem(new GUIContent("Gold!"), tileEntity?.GetType() == typeof(GoldEntityData), () =>
                             {
                                 tileEntityProp.managedReferenceValue = new GoldEntityData();
@@ -197,6 +202,10 @@ public class LevelDataEditor : PropertyDrawer
             RobotEntityData r when r.robotConfig == robotConfigurations[0] => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_forky.png"),
             RobotEntityData r when r.robotConfig == robotConfigurations[1] => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_plod.png"),
             WallEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_wall.png"),
+            SimpleDoorEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_simple_door.png"),
+            //SimpleDoorEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_security_door.png"),
+            GoldEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_gold.png"),
+            TreasureTargetEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_treasure_target.png"),
             _ => null
         };
 

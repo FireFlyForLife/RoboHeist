@@ -203,5 +203,6 @@ MonoBehaviour:
   - Config: {fileID: 11400000, guid: abad4459ef1f3754d957714a5e453644, type: 2}
     Prefab: {fileID: 5710903580713681312, guid: f3fb9db8507c44641a91184a8050b218, type: 3}
   wallPrefab: {fileID: 1459092491011929456, guid: dd3d02fe79d8ad847a3b18535c242f47, type: 3}
-  treasureTargetPrefab: {fileID: 4142739192247624521, guid: 7aa9ecb0e4d9e854198827d5a1d1dd2f, type: 3}
+  simpleDoorPrefab: {fileID: 494823954963702554, guid: afe381a0aeabfd24185f94b10f4425ee, type: 3}
   goldPrefab: {fileID: 5958420380571871723, guid: 12c4cd1dfe1770141a825cd411bed921, type: 3}
+  treasureTargetPrefab: {fileID: 4142739192247624521, guid: 7aa9ecb0e4d9e854198827d5a1d1dd2f, type: 3}
