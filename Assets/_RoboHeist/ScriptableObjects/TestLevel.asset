@@ -820,7 +820,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7652326106540277960
+        rid: -2
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -1275,8 +1275,3 @@ MonoBehaviour:
       data:
         direction: 0
         position: {x: 11, y: 1}
-    - rid: 7652326106540277960
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 0
-        position: {x: 8, y: 13}

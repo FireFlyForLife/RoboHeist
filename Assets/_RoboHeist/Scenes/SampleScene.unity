@@ -1080,6 +1080,7 @@ GameObject:
   - component: {fileID: 1346215528}
   - component: {fileID: 1346215527}
   - component: {fileID: 1346215526}
+  - component: {fileID: 1346215529}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -1099,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4e822b3e5a5804fa35f3507b48cbf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 0}
+  levelData: {fileID: 11400000, guid: d7fe9ac34e3c6654a879489c91dc7e88, type: 2}
   grid: {fileID: 1346215527}
 --- !u!156049354 &1346215527
 Grid:
@@ -1129,6 +1130,25 @@ Transform:
   - {fileID: 419025645}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346215529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346215525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8267105bfeafacb4fb521b916a11e1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1346215526}
+  robotPrefabs:
+  - Config: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
+    Prefab: {fileID: 1970933404529072287, guid: efbbc1ae36895834a9f9f8676dfcafd3, type: 3}
+  - Config: {fileID: 11400000, guid: abad4459ef1f3754d957714a5e453644, type: 2}
+    Prefab: {fileID: 5710903580713681312, guid: f3fb9db8507c44641a91184a8050b218, type: 3}
+  wallPrefab: {fileID: 1459092491011929456, guid: dd3d02fe79d8ad847a3b18535c242f47, type: 3}
 --- !u!1001 &1356949472
 PrefabInstance:
   m_ObjectHideFlags: 0
