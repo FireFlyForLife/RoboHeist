@@ -18,6 +18,11 @@ public class LevelGridData
     [SerializeField]
     public GridLocation[] TileEntities;
 
+    public GridLocation GetAt(Vector2Int position)
+    {
+        return TileEntities[position.y * Dimensions.x + position.x];
+    }
+
     public void EnsureSize()
     {
         if (TileEntities == null || Dimensions.y * Dimensions.x != TileEntities.Length)
@@ -32,10 +37,13 @@ public class LevelGridData
 public class LevelData : ScriptableObject
 {
     [SerializeField]
-    LevelGridData LevelGrid;
+    public LevelGridData LevelGrid;
 
     private void OnValidate()
     {
         LevelGrid.EnsureSize();
+
+        var levelBuilder = FindFirstObjectByType<LevelBuilder>();
+        levelBuilder.InstantiateLevel(LevelGrid);
     }
 }

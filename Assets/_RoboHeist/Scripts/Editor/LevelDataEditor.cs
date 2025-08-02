@@ -78,11 +78,46 @@ public class LevelDataEditor : PropertyDrawer
                         //var icon = new GUIContent(CompositeIcons(GetFloorIcon(gridLocation.floor), GetIcon(gridLocation.TileEntity)), $"{tileProp.GetType()}");
                         var icon = new GUIContent(GetIcon(tileEntity), $"{tileProp.GetType()}");
 
-                        if (GUI.Button(new Rect(r.x, r.y, cellSize, cellSize), icon, buttonStyle))
-                        {
-                            Debug.Log($"TileEntity = {tileEntityProp.managedReferenceValue as TileEntityData}");
+                        var iconRect = new Rect(r.x, r.y, cellSize, cellSize);
 
+                        // Rotate the icon to face the correct direction:
+                        Matrix4x4 oldMatrix = GUI.matrix;
+                        if (tileEntity != null)
+                        {
+                            Vector2 pivot = new Vector2(iconRect.x + iconRect.width / 2f, iconRect.y + iconRect.height / 2f);
+                            GUIUtility.RotateAroundPivot(GetFacingAngle(tileEntity.direction), pivot);
+                        }
+
+                        if (GUI.Button(iconRect, icon, buttonStyle))
+                        {
                             GenericMenu menu = new GenericMenu();
+
+                            if (tileEntity != null)
+                            {
+                                menu.AddItem(new GUIContent("Face Up"), false, () =>
+                                {
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Up;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
+                                });
+                                menu.AddItem(new GUIContent("Face Down"), false, () =>
+                                {
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Down;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
+                                });
+                                menu.AddItem(new GUIContent("Face Left"), false, () =>
+                                {
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Left;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
+                                });
+                                menu.AddItem(new GUIContent("Face Right"), false, () =>
+                                {
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Right;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
+                                });
+
+                                menu.AddSeparator("");
+                            }
+
                             menu.AddItem(new GUIContent("Nothing"), tileEntity == null, () =>
                             {
                                 tileEntityProp.managedReferenceValue = null;
@@ -108,6 +143,9 @@ public class LevelDataEditor : PropertyDrawer
                             menu.ShowAsContext(); // Shows the popup menu at mouse position
                         }
 
+                        // Revert to the old matrix.
+                        GUI.matrix = oldMatrix;
+
 
                         r.x += cellSize + cellMargin;
                     }
@@ -118,6 +156,18 @@ public class LevelDataEditor : PropertyDrawer
         }
 
         EditorGUI.EndProperty();
+    }
+
+    private float GetFacingAngle(Direction dir)
+    {
+        switch (dir)
+        {
+            case Direction.Up: return 180.0f;
+            case Direction.Down: return 0.0f;
+            case Direction.Left: return 90.0f;
+            case Direction.Right: return -90.0f;
+            default: return 0.0f;
+        }
     }
 
     private Texture2D GetFloorIcon(string typeName)

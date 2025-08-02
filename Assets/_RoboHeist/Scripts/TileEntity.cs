@@ -101,15 +101,18 @@ public abstract class TileEntityBehaviour : MonoBehaviour
 {
     protected abstract TileEntityData GetTileEntityData();
 
+    public void EnsurePositionAndRotation(TheGrid grid)
+    {
+        var entityData = GetTileEntityData();
+        transform.localPosition = grid.CalculateWorldPosition(entityData.position);//new Vector3((float)entityData.position.x * gridSize.x, 0.0f, (float)entityData.position.y * gridSize.y);
+        transform.localRotation = grid.CalculateWorldRotation(entityData.direction);//Quaternion.AngleAxis((int)entityData.direction * 90.0f, Vector3.up);
+    }
+
     // Messages
     protected virtual void Start()
     {
         // One time position set for static entities.
-        Vector2 gridSize = TheGrid.Instance.TileSize;
-        var entityData = GetTileEntityData();
-        TheGrid.Instance.RegisterAtPosition(entityData, entityData.position);
-        transform.localPosition = new Vector3((float)entityData.position.x * gridSize.x, 0.0f, (float)entityData.position.y * gridSize.y);
-        transform.localRotation = Quaternion.AngleAxis((int)entityData.direction * 90.0f, Vector3.up);
+        EnsurePositionAndRotation(TheGrid.Instance);
     }
 }
 
@@ -120,11 +123,7 @@ public abstract class MoveableEntityBehaviour : TileEntityBehaviour
         // TODO: interpolate
 
         // One time position set for static entities.
-        Vector2 gridSize = TheGrid.Instance.TileSize;
-        var entityData = GetTileEntityData();
-        TheGrid.Instance.RegisterAtPosition(entityData, entityData.position);
-        transform.localPosition = new Vector3((float)entityData.position.x * gridSize.x, 0.0f, (float)entityData.position.y * gridSize.y);
-        transform.localRotation = Quaternion.AngleAxis((int)entityData.direction * 90.0f, Vector3.up);
+        EnsurePositionAndRotation(TheGrid.Instance);
     }
 }
 
