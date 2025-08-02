@@ -201,7 +201,7 @@ public class RobotInstructionUI : MonoBehaviour
         if (Input.GetMouseButtonDown((int)MouseButton.LeftMouse) &&
             Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, float.MaxValue))
         {
-            Robot robot = hit.collider.GetComponent<Robot>();
+            RobotEntityBehaviour robot = hit.collider.GetComponent<RobotEntityBehaviour>();
             VisualizingRobot = robot;
         }
 

@@ -33,9 +33,9 @@ public static class DirectionExtensions
     {
         switch (direction)
         {
-            case Direction.Up: return new Vector2Int(0, 1);
+            case Direction.Up: return new Vector2Int(0, -1);
             case Direction.Right: return new Vector2Int(1, 0);
-            case Direction.Down: return new Vector2Int(0, -1);
+            case Direction.Down: return new Vector2Int(0, 1);
             case Direction.Left: return new Vector2Int(-1, 0);
             default: return new Vector2Int(0, 0);
         }
