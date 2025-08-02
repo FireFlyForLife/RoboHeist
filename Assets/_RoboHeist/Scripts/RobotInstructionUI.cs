@@ -197,6 +197,14 @@ public class RobotInstructionUI : MonoBehaviour
 
     void Update()
 	{
+        RaycastHit hit;
+        if (Input.GetMouseButtonDown((int)MouseButton.LeftMouse) &&
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, float.MaxValue))
+        {
+            Robot robot = hit.collider.GetComponent<Robot>();
+            VisualizingRobot = robot;
+        }
+
 		if (VisualizingRobot == null)
 		{
 			// Reset instruction list ui and make invisible
