@@ -2,11 +2,11 @@
     <Style src="project://database/Assets/_RoboHeist/UI/TimelineUIStylesheet.uss?fileID=7433441132597879392&amp;guid=8fad147a33d6b3a4cbe79da6a42d28fc&amp;type=3#TimelineUIStylesheet" />
     <ui:VisualElement name="EntireScreen" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; justify-content: center;">
         <ui:VisualElement name="TimelineContainer" picking-mode="Ignore" style="flex-grow: 1; flex-direction: column-reverse; max-width: 1000px; align-self: stretch; align-items: stretch; justify-content: flex-start; left: 0%;">
-            <ui:SliderInt value="50" high-value="100" name="TimeSlider" fill="false" style="min-height: 50px; scale: 2 2; width: 500px; translate: 50% -20px;" />
+            <ui:SliderInt value="0" high-value="100" name="TimeSlider" fill="false" style="min-height: 50px; scale: 2 2; width: 500px; translate: 50% -20px;" />
             <ui:ToggleButtonGroup name="PlayButtonGroup" value="100" allow-empty-selection="false" is-multiple-selection="false" style="align-self: center; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; translate: 0 -30px;">
-                <ui:Button text="Play" name="PlayButton" tooltip="Start/resume time flow" style="margin-left: 10px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; margin-bottom: 7px;" />
-                <ui:Button text="Pause" name="PauseButton" tooltip="Pause time flow" style="margin-bottom: 7px;" />
-                <ui:Button text="Stop" name="StopButton" tooltip="Reset time back to the start" style="margin-bottom: 7px;" />
+                <ui:Button text="Play" name="PlayButton" tooltip="Start/resume time flow" icon-image="project://database/Assets/KennysAssets/Game%20Icons/Spritesheet/sheet_black1x.png?fileID=982042558374405906&amp;guid=5428ade5a8cfaff4aabf901aa1df6a0a&amp;type=3#forward.png" style="margin-left: 10px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; margin-bottom: 7px;" />
+                <ui:Button text="Pause" name="PauseButton" tooltip="Pause time flow" icon-image="project://database/Assets/KennysAssets/Game%20Icons/Spritesheet/sheet_black1x.png?fileID=7803104373762071890&amp;guid=5428ade5a8cfaff4aabf901aa1df6a0a&amp;type=3#pause.png" style="margin-bottom: 7px;" />
+                <ui:Button text="Stop" name="StopButton" tooltip="Reset time back to the start" icon-image="project://database/Assets/KennysAssets/Game%20Icons/Spritesheet/sheet_black1x.png?fileID=710735504549460844&amp;guid=5428ade5a8cfaff4aabf901aa1df6a0a&amp;type=3#stop.png" style="margin-bottom: 7px;" />
             </ui:ToggleButtonGroup>
         </ui:VisualElement>
     </ui:VisualElement>

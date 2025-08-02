@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Forkfig
   m_EditorClassIdentifier: 
   DisplayName: Forklift Bot
-  InstructionQueue: []
+  InstructionQueue:
+  - rid: 7423475962714783855
   ErrorHandler:
     rid: -2
   references:
@@ -21,3 +22,6 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 7423475962714783855
+      type: {class: MoveForward, ns: , asm: Assembly-CSharp}
+      data: 
