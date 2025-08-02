@@ -21,7 +21,6 @@ public class TheGrid : MonoBehaviour
             if (entities.ContainsValue(entity))
             {
                 Vector2Int existingPosition = entities.FirstOrDefault(pair => pair.Value == entity).Key;
-                Debug.Log($"Removing {entity.gameObject.name} from {existingPosition}");
                 entities.Remove(existingPosition);
             }
             entities.Add(position, entity);
