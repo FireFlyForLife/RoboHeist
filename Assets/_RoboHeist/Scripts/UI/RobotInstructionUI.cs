@@ -13,6 +13,7 @@ public class RobotInstructionUI : MonoBehaviour
 	public Sprite ForwardSprite;
 	public Sprite LeftSprite;
     public Sprite RightSprite;
+    public Light selectionSpotlight;
 
     [Header("Runtime")]
     public RobotEntityBehaviour VisualizingRobot;
@@ -213,15 +214,17 @@ public class RobotInstructionUI : MonoBehaviour
 			// Reset instruction list ui and make invisible
 			instructionListContainer.Clear();
             headerUI.text = "No robot selected";
+            selectionSpotlight.enabled = false;
             //uiDocument.enabled = false;
             return;
 		}
 
-		//uiDocument.enabled = true;
+        //uiDocument.enabled = true;
+        selectionSpotlight.enabled = true;
+        selectionSpotlight.transform.position = VisualizingRobot.transform.position + new Vector3(0.0f, 5.1f, 0.0f);
 
-
-		// Repopulate the ui to be in sync with the instruction list
-		Instruction[] all_instructions = VisualizingRobot.instructionQueue?.GetAllInstructions().ToArray();
+        // Repopulate the ui to be in sync with the instruction list
+        Instruction[] all_instructions = VisualizingRobot.instructionQueue?.GetAllInstructions().ToArray();
 		if (all_instructions == null)
 		{
             // Destroy old ui
