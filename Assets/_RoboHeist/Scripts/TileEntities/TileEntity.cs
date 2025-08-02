@@ -79,7 +79,8 @@ public abstract class MoveableEntityData : TileEntityData
 {
     public override bool CanBePushed(Vector2Int direction)
     {
-        return TheGrid.Instance.CheckGridPosition(position + direction) == null;
+        var tile = TheGrid.Instance.CheckGridPosition(position + direction);
+        return tile == null || !tile.IsSolid();
     }
 
     public override bool Push(TileEntityData pusher, Vector2Int direction)
@@ -171,6 +172,27 @@ public class GoldEntityData : MoveableEntityData
     protected override void CloneImpl(TileEntityData clone)
     {
         base.CloneImpl(clone);
+    }
+}
+
+[Serializable]
+public class DoorEntityData : TileEntityData
+{
+    public override object Clone()
+    {
+        DoorEntityData clone = new DoorEntityData();
+        CloneImpl(clone);
+        return clone;
+    }
+
+    protected override void CloneImpl(TileEntityData clone)
+    {
+        base.CloneImpl(clone);
+    }
+
+    public override bool IsSolid()
+    {
+        return false;
     }
 }
 
