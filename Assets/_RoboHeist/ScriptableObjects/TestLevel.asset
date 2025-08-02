@@ -307,7 +307,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278369
       floor: tarmac
     - TileEntity:
         rid: 7652326084396712096
@@ -409,7 +409,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278367
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -571,7 +571,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278371
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -926,40 +926,32 @@ MonoBehaviour:
         direction: 0
         position: {x: 0, y: 0}
         robotConfig: {fileID: 0}
-        instructionQueue:
-          instructionCounter: 0
         executionDelay: 1
-        currentState: 0
+        startingState: 0
     - rid: 7652326084396712035
       type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 0, y: 0}
         robotConfig: {fileID: 0}
-        instructionQueue:
-          instructionCounter: 0
         executionDelay: 1
-        currentState: 0
+        startingState: 0
     - rid: 7652326084396712037
       type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 1
         position: {x: 7, y: 4}
         robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
-        instructionQueue:
-          instructionCounter: 0
         executionDelay: 1
-        currentState: 0
+        startingState: 0
     - rid: 7652326084396712040
       type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 11, y: 8}
         robotConfig: {fileID: 11400000, guid: abad4459ef1f3754d957714a5e453644, type: 2}
-        instructionQueue:
-          instructionCounter: 0
         executionDelay: 1
-        currentState: 0
+        startingState: 0
     - rid: 7652326084396712043
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
@@ -1275,3 +1267,21 @@ MonoBehaviour:
       data:
         direction: 0
         position: {x: 11, y: 1}
+    - rid: 7652326106540278367
+      type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
+        executionDelay: 1
+        startingState: 0
+    - rid: 7652326106540278369
+      type: {class: TreasureTargetEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+    - rid: 7652326106540278371
+      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}

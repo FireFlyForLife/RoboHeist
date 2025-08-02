@@ -1,9 +1,11 @@
 using UnityEngine;
 
-//public class TreasureTargetTileEntity : TileEntity
-//{
-//    public override bool IsSolid()
-//    {
-//        return false;
-//    }
-//}
+public class TreasureTargetEntityBehaviour : TileEntityBehaviour
+{
+    public TreasureTargetEntityData treasureTargetEntityData;
+
+    protected override TileEntityData GetTileEntityData()
+    {
+        return treasureTargetEntityData;
+    }
+}
