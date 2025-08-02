@@ -23,7 +23,7 @@ public class PanicError : IErrorBehaviour
 
     public bool DetectErrorState(RobotEntityData robot, InstructionResult result)
     {
-        return result.CollisionObject != null;
+        return result.CollisionObject != null && result.WasBlocked;
     }
 
     public IEnumerator ExecuteErrorInstructions(RobotEntityData robot)
