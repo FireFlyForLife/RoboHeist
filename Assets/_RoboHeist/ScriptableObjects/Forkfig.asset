@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a01500e9920b6429854eb1664ddbac, type: 3}
   m_Name: Forkfig
   m_EditorClassIdentifier: 
+  DisplayName: Forklift Bot
   InstructionQueue: []
   ErrorHandler:
     rid: -2

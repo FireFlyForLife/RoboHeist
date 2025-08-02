@@ -21,6 +21,7 @@ public class RobotInstructionUI : MonoBehaviour
 	private VisualElement ui;
 	private VisualElement instructionListContainer;
 	private List<Instruction> visualizedInstructions;
+    private Label headerUI;
 
 	// Drag n drop
 	private bool draggingInstructionPointer = false;
@@ -33,6 +34,7 @@ public class RobotInstructionUI : MonoBehaviour
 		uiDocument = GetComponent<UIDocument>();
 		ui = uiDocument.rootVisualElement;
 		instructionListContainer = ui.Q("InstructionList");
+        headerUI = ui.Q<Label>("Header");
     }
 
 	private Sprite GetIconForInstruction(Instruction instruction)
@@ -210,8 +212,9 @@ public class RobotInstructionUI : MonoBehaviour
 		{
 			// Reset instruction list ui and make invisible
 			instructionListContainer.Clear();
-			//uiDocument.enabled = false;
-			return;
+            headerUI.text = "No robot selected";
+            //uiDocument.enabled = false;
+            return;
 		}
 
 		//uiDocument.enabled = true;
@@ -255,6 +258,8 @@ public class RobotInstructionUI : MonoBehaviour
 		// Update values
         if (VisualizingRobot.instructionQueue != null)
 		{
+            headerUI.text = VisualizingRobot.robotEntityData.robotConfig.DisplayName;
+
             for (int i = 0; i < all_instructions.Length; i++)
 			{
 				Instruction instruction = all_instructions[i];

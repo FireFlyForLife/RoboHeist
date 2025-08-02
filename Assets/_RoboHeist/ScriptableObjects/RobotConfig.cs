@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RobotConfig", menuName = "Scriptable Objects/RobotConfig")]
 public class RobotConfig : ScriptableObject
 {
+    public string DisplayName;
+
     [SerializeReference, SubclassSelector]
     public Instruction[] InstructionQueue;
 

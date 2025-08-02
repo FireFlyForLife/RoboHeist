@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a01500e9920b6429854eb1664ddbac, type: 3}
   m_Name: Plodfig
   m_EditorClassIdentifier: 
+  DisplayName: Security Bot
   InstructionQueue:
   - rid: 8059567189542568177
   - rid: 8059567189542568178

@@ -31,5 +31,5 @@ Button:active {
 }
 
 Button:hover {
-    scale: 1.05 1.05;
+    scale: 1.02 1.02;
 }
