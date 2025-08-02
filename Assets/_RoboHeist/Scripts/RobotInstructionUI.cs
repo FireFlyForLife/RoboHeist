@@ -15,7 +15,7 @@ public class RobotInstructionUI : MonoBehaviour
     public Sprite RightSprite;
 
     [Header("Runtime")]
-    public Robot VisualizingRobot;
+    public RobotEntityBehaviour VisualizingRobot;
 
 	private UIDocument uiDocument;
 	private VisualElement ui;

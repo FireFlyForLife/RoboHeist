@@ -57,10 +57,7 @@ public class LevelBuilder : MonoBehaviour
                 if (instance != null)
                 {
                     instance.hideFlags = HideFlags.DontSaveInEditor;
-                    //var tileEntityBehaviour = instance.GetComponent<TileEntityBehaviour>();
-                    //tileEntityBehaviour.SetPosition(position);
-                    //var tileEntity = instance.GetComponent<TileEntity>();
-                    //tileEntity.position = position;
+                    grid.RegisterAtPosition(tileData.TileEntity, position);
                     createdInstances.Add(instance);
                 }
             }
@@ -84,7 +81,7 @@ public class LevelBuilder : MonoBehaviour
     {
         GameObject instance = Instantiate(wallPrefab, grid.CalculateWorldPosition(position), Quaternion.identity, transform);
         var web = instance?.GetComponent<WallEntityBehaviour>();
-        web.wallEntityData = entityData;
+        web.wallEntityData = (WallEntityData)entityData.Clone();
         web.wallEntityData.position = position;
         web.EnsurePositionAndRotation(grid);
         return instance;
@@ -98,7 +95,7 @@ public class LevelBuilder : MonoBehaviour
         {
             instance = Instantiate(prefab.Prefab, grid.CalculateWorldPosition(position), grid.CalculateWorldRotation(entityData.direction), transform);
             var reb = instance?.GetComponent<RobotEntityBehaviour>();
-            reb.robotEntityData = entityData;
+            reb.robotEntityData = (RobotEntityData)entityData.Clone();
             reb.robotEntityData.position = position;
             reb.EnsurePositionAndRotation(grid);
         }

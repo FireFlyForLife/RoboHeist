@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class WallTileEntity : TileEntity
-{
-}
+//[Serializable]
+//public class WallTileEntity : TileEntity
+//{
+//}

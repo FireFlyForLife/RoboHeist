@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class InstructionResult
 {
-    public TileEntity CollisionObject = null;
+    public TileEntityData CollisionObject = null;
     public bool WasBlocked = false;
 }
 
@@ -18,7 +18,7 @@ public abstract class Instruction
 {
     public abstract string CommandShortForm { get; }
     public abstract string CommandLongForm { get; }
-    public abstract InstructionResult Execute(Robot robot);
+    public abstract InstructionResult Execute(RobotEntityData robot);
 }
 
 [Serializable]
@@ -27,7 +27,7 @@ public class NoOp : Instruction
     public override string CommandShortForm => "NOP";
     public override string CommandLongForm => "Wait";
 
-    public override InstructionResult Execute(Robot robot)
+    public override InstructionResult Execute(RobotEntityData robot)
     {
         return new InstructionResult();
     }
@@ -39,7 +39,8 @@ public class MoveForward : Instruction
     public override string CommandShortForm => "FWD";
     public override string CommandLongForm => "Move Forward";
 
-    public override InstructionResult Execute(Robot robot)
+
+    public override InstructionResult Execute(RobotEntityData robot)
     {
         var dir = robot.direction.AsVec2();
 
@@ -65,7 +66,8 @@ public class TurnLeft : Instruction
     public override string CommandShortForm => "LFT";
     public override string CommandLongForm => "Turn Left";
 
-    public override InstructionResult Execute(Robot robot)
+
+    public override InstructionResult Execute(RobotEntityData robot)
     {
         robot.direction = robot.direction.TurnedLeft();
         return new InstructionResult();
@@ -78,7 +80,8 @@ public class TurnRight : Instruction
     public override string CommandShortForm => "RGT";
     public override string CommandLongForm => "Turn Right";
 
-    public override InstructionResult Execute(Robot robot)
+
+    public override InstructionResult Execute(RobotEntityData robot)
     {
         robot.direction = robot.direction.TurnedRight();
         return new InstructionResult();

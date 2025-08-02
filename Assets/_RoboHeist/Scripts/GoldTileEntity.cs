@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoldTileEntity : MoveableTileEntity
-{
+//public class GoldTileEntity : MoveableTileEntity
+//{
     
-}
+//}

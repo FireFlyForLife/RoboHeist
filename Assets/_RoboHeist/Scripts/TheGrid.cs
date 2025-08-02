@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class TheGrid : MonoBehaviour
 {
     public LevelData levelData;
-    private Dictionary<Vector2Int, TileEntity> entities = new();
+    private Dictionary<Vector2Int, TileEntityData> entities = new();
 
     public static TheGrid Instance { get; private set; }
 
@@ -24,7 +24,7 @@ public class TheGrid : MonoBehaviour
         return Quaternion.AngleAxis((int)direction * 90.0f + 180.0f, Vector3.up);
     }
 
-    public void RegisterAtPosition(TileEntity entity, Vector2Int position)
+    public void RegisterAtPosition(TileEntityData entity, Vector2Int position)
     {
         if (!entities.ContainsKey(position))
         {
@@ -37,13 +37,13 @@ public class TheGrid : MonoBehaviour
         }
     }
 
-    public void RegisterAtPosition(TileEntityData entity, Vector2Int position)
-    {
-    }
+    //public void RegisterAtPosition(TileEntityData entity, Vector2Int position)
+    //{
+    //}
 
-    public TileEntity CheckGridPosition(Vector2Int position)
+    public TileEntityData CheckGridPosition(Vector2Int position)
     {
-        TileEntity entity;
+        TileEntityData entity;
         return (entities.TryGetValue(position, out entity) ? entity : null);
     }
 
