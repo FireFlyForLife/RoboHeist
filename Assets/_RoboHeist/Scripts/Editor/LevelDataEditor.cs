@@ -128,6 +128,16 @@ public class LevelDataEditor : PropertyDrawer
                                 tileEntityProp.managedReferenceValue = new WallEntityData();
                                 tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
+                            menu.AddItem(new GUIContent("Gold!"), tileEntity?.GetType() == typeof(GoldEntityData), () =>
+                            {
+                                tileEntityProp.managedReferenceValue = new GoldEntityData();
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
+                            });
+                            menu.AddItem(new GUIContent("Treasure Target"), tileEntity?.GetType() == typeof(TreasureTargetEntityData), () =>
+                            {
+                                tileEntityProp.managedReferenceValue = new TreasureTargetEntityData();
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
+                            });
 
                             foreach (var config in robotConfigurations)
                             {

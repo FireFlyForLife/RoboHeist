@@ -62,6 +62,11 @@ public abstract class TileEntityData : ICloneable
         return false;
     }
 
+    public virtual bool IsSolid()
+    {
+        return true;
+    }
+
     protected virtual void CloneImpl(TileEntityData clone)
     {
         clone.direction = direction;
@@ -74,7 +79,8 @@ public abstract class MoveableEntityData : TileEntityData
 {
     public override bool CanBePushed(Vector2Int direction)
     {
-        return TheGrid.Instance.CheckGridPosition(position + direction) == null;
+        var tile = TheGrid.Instance.CheckGridPosition(position + direction);
+        return tile == null || !tile.IsSolid();
     }
 
     public override bool Push(TileEntityData pusher, Vector2Int direction)
@@ -132,6 +138,64 @@ public class WallEntityData : TileEntityData
     }
 }
 
+[Serializable]
+public class TreasureTargetEntityData : TileEntityData
+{
+    public override object Clone()
+    {
+        TreasureTargetEntityData clone = new TreasureTargetEntityData();
+        CloneImpl(clone);
+        return clone;
+    }
+
+    protected override void CloneImpl(TileEntityData clone)
+    {
+        base.CloneImpl(clone);
+    }
+
+    public override bool IsSolid()
+    {
+        return false;
+    }
+}
+
+[Serializable]
+public class GoldEntityData : MoveableEntityData
+{
+    public override object Clone()
+    {
+        GoldEntityData clone = new GoldEntityData();
+        CloneImpl(clone);
+        return clone;
+    }
+
+    protected override void CloneImpl(TileEntityData clone)
+    {
+        base.CloneImpl(clone);
+    }
+}
+
+[Serializable]
+public class DoorEntityData : TileEntityData
+{
+    public override object Clone()
+    {
+        DoorEntityData clone = new DoorEntityData();
+        CloneImpl(clone);
+        return clone;
+    }
+
+    protected override void CloneImpl(TileEntityData clone)
+    {
+        base.CloneImpl(clone);
+    }
+
+    public override bool IsSolid()
+    {
+        return false;
+    }
+}
+
 
 
 public abstract class TileEntityBehaviour : MonoBehaviour
@@ -142,8 +206,8 @@ public abstract class TileEntityBehaviour : MonoBehaviour
     {
         var entityData = GetTileEntityData();
         grid.RegisterAtPosition(entityData, entityData.position);
-        transform.localPosition = grid.CalculateWorldPosition(entityData.position);//new Vector3((float)entityData.position.x * gridSize.x, 0.0f, (float)entityData.position.y * gridSize.y);
-        transform.localRotation = grid.CalculateWorldRotation(entityData.direction);//Quaternion.AngleAxis((int)entityData.direction * 90.0f, Vector3.up);
+        transform.localPosition = grid.CalculateWorldPosition(entityData.position);
+        transform.localRotation = grid.CalculateWorldRotation(entityData.direction);
     }
 
     // Messages
@@ -164,93 +228,3 @@ public abstract class MoveableEntityBehaviour : TileEntityBehaviour
         EnsurePositionAndRotation(TheGrid.Instance);
     }
 }
-
-//public class RobotEntityBehaviour : TileEntityBehaviour
-//{
-//    [SerializeReference, SubclassSelector]
-//    public new RobotEntityData entityData;
-
-//    private Coroutine instructionRunner = null;
-
-//    public RobotState CurrentState
-//    {
-//        get => entityData.currentState;
-//        set
-//        {
-//            if (entityData.currentState == value)
-//            {
-//                return;
-//            }
-
-//            StartRobotBehaviour(value);
-//            entityData.currentState = value;
-//        }
-//    }
-
-//    public IEnumerator<Instruction> Instructions { get; set; }
-//}
-
-//public class TileEntity : MonoBehaviour
-//{
-//    // Variables
-//    public Direction direction = Direction.Up;
-//    public Vector2Int position;
-
-//    public virtual bool CanBePushed(Vector2Int direction)
-//    {
-//        return false;
-//    }
-
-//    public virtual bool Push(TileEntity pusher, Vector2Int direction)
-//    {
-//        // By default all entities are static and immovable.
-//        return false;
-//    }
-
-//    public virtual bool IsSolid()
-//    {
-//        return true;
-//    }
-
-//    // Messages
-//    protected virtual void Start()
-//    {
-//        // One time position set for static entities.
-//        Vector2 gridSize = TheGrid.Instance.TileSize;
-//        TheGrid.Instance.RegisterAtPosition(this, position);
-//        transform.localPosition = new Vector3((float)position.x * gridSize.x, 0.0f, (float)position.y * gridSize.y);
-//        transform.localRotation = Quaternion.AngleAxis((int)direction * 90.0f, Vector3.up);
-//    }
-//}
-
-//[Serializable]
-//public class MoveableTileEntity : TileEntity
-//{
-//    public override bool CanBePushed(Vector2Int direction)
-//    {
-//        var tile = TheGrid.Instance.CheckGridPosition(position + direction);
-//        return tile == null || !tile.IsSolid();
-//    }
-
-//    public override bool Push(TileEntity pusher, Vector2Int direction)
-//    {
-//        if (CanBePushed(direction))
-//        {
-//            pusher.position += direction;
-//            position += direction;
-//            return true;
-//        }
-//        return false;
-//    }
-
-//    protected virtual void Update()
-//    {
-//        // TODO: interpolate
-
-//        // Update visual transform from grid position and direction
-//        Vector2 gridSize = TheGrid.Instance.TileSize;
-//        TheGrid.Instance.RegisterAtPosition(this, position);
-//        transform.localPosition = new Vector3((float)position.x * gridSize.x, 0.0f, (float)position.y * gridSize.y);
-//        transform.localRotation = Quaternion.AngleAxis((int)direction * 90.0f, Vector3.up);
-//    }
-//}

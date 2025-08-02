@@ -16,6 +16,8 @@ public class LevelBuilder : MonoBehaviour
     public TheGrid grid = null;
     public List<RobotPrefabPair> robotPrefabs = new();
     public GameObject wallPrefab = null;
+    public GameObject goldPrefab = null;
+    public GameObject treasureTargetPrefab = null;
 
     private LevelGridData levelGridData = null;
     private List<GameObject> createdInstances = new();
@@ -70,6 +72,8 @@ public class LevelBuilder : MonoBehaviour
         var entity = entityData switch
         {
             WallEntityData w => MakeInstanceFromTileData(w, position),
+            GoldEntityData g => MakeInstanceFromTileData(g, position),
+            TreasureTargetEntityData t => MakeInstanceFromTileData(t, position),
             RobotEntityData r => MakeInstanceFromTileData(r, position),
             _ => null,
         };
@@ -84,6 +88,26 @@ public class LevelBuilder : MonoBehaviour
         web.wallEntityData = (WallEntityData)entityData.Clone();
         web.wallEntityData.position = position;
         web.EnsurePositionAndRotation(grid);
+        return instance;
+    }
+
+    private GameObject MakeInstanceFromTileData(GoldEntityData entityData, Vector2Int position)
+    {
+        GameObject instance = Instantiate(goldPrefab, grid.CalculateWorldPosition(position), Quaternion.identity, transform);
+        var geb = instance?.GetComponent<GoldEntityBehaviour>();
+        geb.goldEntityData = (GoldEntityData)entityData.Clone();
+        geb.goldEntityData.position = position;
+        geb.EnsurePositionAndRotation(grid);
+        return instance;
+    }
+
+    private GameObject MakeInstanceFromTileData(TreasureTargetEntityData entityData, Vector2Int position)
+    {
+        GameObject instance = Instantiate(treasureTargetPrefab, grid.CalculateWorldPosition(position), Quaternion.identity, transform);
+        var tteb = instance?.GetComponent<TreasureTargetEntityBehaviour>();
+        tteb.treasureTargetEntityData = (TreasureTargetEntityData)entityData.Clone();
+        tteb.treasureTargetEntityData.position = position;
+        tteb.EnsurePositionAndRotation(grid);
         return instance;
     }
 
