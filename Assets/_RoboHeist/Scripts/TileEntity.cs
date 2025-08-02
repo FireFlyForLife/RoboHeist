@@ -83,6 +83,9 @@ public abstract class MoveableEntityData : TileEntityData
         {
             pusher.position += direction;
             position += direction;
+
+            TheGrid.Instance.RegisterAtPosition(pusher, pusher.position);
+            TheGrid.Instance.RegisterAtPosition(this, position);
             return true;
         }
         return false;
