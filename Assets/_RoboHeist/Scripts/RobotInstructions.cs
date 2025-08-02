@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -6,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class InstructionResult
 {
-    public TileEntityData CollisionObject = null;
+    public List<TileEntityData> CollisionObjects = null;
     public bool WasBlocked = false;
 }
 
@@ -46,10 +48,19 @@ public class MoveForward : Instruction
 
         var instructionResult = new InstructionResult();
 
-        instructionResult.CollisionObject = TheGrid.Instance.CheckGridPosition(robot.position + dir);
-        if (instructionResult.CollisionObject != null)
+        instructionResult.CollisionObjects = TheGrid.Instance.CheckGridPosition(robot.position + dir).ToList();
+        if (instructionResult.CollisionObjects?.Count > 0)
         {
-            instructionResult.WasBlocked = !instructionResult.CollisionObject.Push(robot, dir);
+            instructionResult.WasBlocked = false;
+            foreach (var obj in instructionResult.CollisionObjects)
+            {
+                instructionResult.WasBlocked |= (obj.IsSolid() && !obj.Push(robot, dir));
+            }
+
+            if (!instructionResult.WasBlocked)
+            {
+                robot.position = robot.position + dir;
+            }
         }
         else
         {

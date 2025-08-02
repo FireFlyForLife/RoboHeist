@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public enum Direction : int
@@ -79,19 +80,16 @@ public abstract class MoveableEntityData : TileEntityData
 {
     public override bool CanBePushed(Vector2Int direction)
     {
-        var tile = TheGrid.Instance.CheckGridPosition(position + direction);
-        return tile == null || !tile.IsSolid();
+        var collisionObjects = TheGrid.Instance.CheckGridPosition(position + direction).ToList();
+        return collisionObjects.Count == 0 || collisionObjects.All(obj => !obj.IsSolid());
     }
 
     public override bool Push(TileEntityData pusher, Vector2Int direction)
     {
         if (CanBePushed(direction))
         {
-            pusher.position += direction;
             position += direction;
-
-            TheGrid.Instance.RegisterAtPosition(pusher, pusher.position);
-            TheGrid.Instance.RegisterAtPosition(this, position);
+            //TheGrid.Instance.RegisterAtPosition(this, position);
             return true;
         }
         return false;
@@ -176,11 +174,11 @@ public class GoldEntityData : MoveableEntityData
 }
 
 [Serializable]
-public class DoorEntityData : TileEntityData
+public class SimpleDoorEntityData : TileEntityData
 {
     public override object Clone()
     {
-        DoorEntityData clone = new DoorEntityData();
+        SimpleDoorEntityData clone = new SimpleDoorEntityData();
         CloneImpl(clone);
         return clone;
     }
@@ -192,11 +190,24 @@ public class DoorEntityData : TileEntityData
 
     public override bool IsSolid()
     {
-        return false;
+        return !IsOpen();
+    }
+
+    public bool IsOpen()
+    {
+        var dir = direction.AsVec2();
+        return
+            HasMoveableAtPosition(position + dir) ||
+            HasMoveableAtPosition(position) ||
+            HasMoveableAtPosition(position - dir);
+
+        bool HasMoveableAtPosition(Vector2Int position)
+        {
+            var entities = TheGrid.Instance.CheckGridPosition(position).ToList();
+            return entities.Count > 0 && entities.Any(entity => entity is MoveableEntityData);
+        }
     }
 }
-
-
 
 public abstract class TileEntityBehaviour : MonoBehaviour
 {

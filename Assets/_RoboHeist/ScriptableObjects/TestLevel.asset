@@ -409,7 +409,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7652326106540278367
+        rid: 7652326106540278732
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -451,10 +451,10 @@ MonoBehaviour:
         rid: 7652326084396712046
       floor: tarmac
     - TileEntity:
-        rid: 7652326084396712035
+        rid: 7652326106540278731
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278730
       floor: tarmac
     - TileEntity:
         rid: 7652326084396712054
@@ -574,7 +574,7 @@ MonoBehaviour:
         rid: 7652326106540278371
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278733
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -631,10 +631,10 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278734
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278735
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -921,14 +921,6 @@ MonoBehaviour:
     - rid: -2
       type: {class: , ns: , asm: }
     - rid: 7652326084396712034
-      type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 0
-        position: {x: 0, y: 0}
-        robotConfig: {fileID: 0}
-        executionDelay: 1
-        startingState: 0
-    - rid: 7652326084396712035
       type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
@@ -1267,21 +1259,43 @@ MonoBehaviour:
       data:
         direction: 0
         position: {x: 11, y: 1}
-    - rid: 7652326106540278367
-      type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 0
-        position: {x: 0, y: 0}
-        robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
-        executionDelay: 1
-        startingState: 0
     - rid: 7652326106540278369
       type: {class: TreasureTargetEntityData, ns: , asm: Assembly-CSharp}
       data:
-        direction: 0
+        direction: 2
         position: {x: 0, y: 0}
     - rid: 7652326106540278371
       type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
       data:
+        direction: 2
+        position: {x: 0, y: 0}
+    - rid: 7652326106540278730
+      type: {class: SimpleDoorEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 2
+        position: {x: 0, y: 0}
+    - rid: 7652326106540278731
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
         direction: 0
+        position: {x: 0, y: 0}
+    - rid: 7652326106540278732
+      type: {class: SimpleDoorEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+    - rid: 7652326106540278733
+      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 2
+        position: {x: 0, y: 0}
+    - rid: 7652326106540278734
+      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 2
+        position: {x: 0, y: 0}
+    - rid: 7652326106540278735
+      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 2
         position: {x: 0, y: 0}

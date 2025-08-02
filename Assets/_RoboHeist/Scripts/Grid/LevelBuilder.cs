@@ -16,6 +16,7 @@ public class LevelBuilder : MonoBehaviour
     public TheGrid grid = null;
     public List<RobotPrefabPair> robotPrefabs = new();
     public GameObject wallPrefab = null;
+    public GameObject simpleDoorPrefab = null;
     public GameObject goldPrefab = null;
     public GameObject treasureTargetPrefab = null;
 
@@ -59,7 +60,7 @@ public class LevelBuilder : MonoBehaviour
                 if (instance != null)
                 {
                     instance.hideFlags = HideFlags.DontSaveInEditor;
-                    grid.RegisterAtPosition(tileData.TileEntity, position);
+                    //grid.RegisterAtPosition(tileData.TileEntity, position);
                     createdInstances.Add(instance);
                 }
             }
@@ -72,6 +73,7 @@ public class LevelBuilder : MonoBehaviour
         var entity = entityData switch
         {
             WallEntityData w => MakeInstanceFromTileData(w, position),
+            SimpleDoorEntityData d => MakeInstanceFromTileData(d, position),
             GoldEntityData g => MakeInstanceFromTileData(g, position),
             TreasureTargetEntityData t => MakeInstanceFromTileData(t, position),
             RobotEntityData r => MakeInstanceFromTileData(r, position),
@@ -88,6 +90,16 @@ public class LevelBuilder : MonoBehaviour
         web.wallEntityData = (WallEntityData)entityData.Clone();
         web.wallEntityData.position = position;
         web.EnsurePositionAndRotation(grid);
+        return instance;
+    }
+
+    private GameObject MakeInstanceFromTileData(SimpleDoorEntityData entityData, Vector2Int position)
+    {
+        GameObject instance = Instantiate(simpleDoorPrefab, grid.CalculateWorldPosition(position), Quaternion.identity, transform);
+        var deb = instance?.GetComponent<SimpleDoorEntityBehaviour>();
+        deb.doorEntityData = (SimpleDoorEntityData)entityData.Clone();
+        deb.doorEntityData.position = position;
+        deb.EnsurePositionAndRotation(grid);
         return instance;
     }
 
