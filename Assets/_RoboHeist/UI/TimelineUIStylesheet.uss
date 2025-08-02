@@ -1,0 +1,35 @@
+Button {
+    background-image: url("project://database/Assets/KennysAssets/Game%20UI%20-%20Sci%20fi/PNG/Green/Default/button_square_header_small_rectangle_screws.png?fileID=21300000&guid=18c6501291df7b941882286c18edb0c1&type=3#button_square_header_small_rectangle_screws");
+    -unity-slice-left: 16;
+    -unity-slice-top: 19;
+    -unity-slice-right: 16;
+    -unity-slice-bottom: 16;
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    margin-right: 1px;
+    margin-left: 0;
+    font-size: 28px;
+    -unity-font-definition: url("project://database/Assets/KennysAssets/Game%20UI%20-%20Sci%20fi/Font/Kenney%20Future%20Narrow.ttf?fileID=12800000&guid=922512d22575d2246b6d9e35f118c3e8&type=3#Kenney Future Narrow");
+    -unity-text-align: middle-center;
+}
+
+Button:checked {
+    -unity-background-image-tint-color: rgb(178, 178, 178);
+    translate: 0 2px;
+}
+
+Button:active {
+    -unity-background-image-tint-color: rgb(178, 178, 178);
+    translate: 0 4px;
+}
+
+Button:hover {
+    scale: 1.05 1.05;
+}
