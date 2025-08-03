@@ -71,12 +71,12 @@ public class LevelDataEditor : PropertyDrawer
                     r.x = position.x;
                     for (int x = 0; x < dimensions.x; x++)
                     {
-                        var gridPos = new Vector2Int(x, y);
-                        var gridLocation = gridObj.GetAt(gridPos);
-                        var tileEntity = gridLocation.TileEntity;
-
+                        int index = y * dimensions.x + x;
+                        var tileProp = dataProp.GetArrayElementAtIndex(index);
+                        var tileEntityProp = tileProp.FindPropertyRelative("TileEntity");
+                        var tileEntity = tileEntityProp.managedReferenceValue as TileEntityData;
                         //var icon = new GUIContent(CompositeIcons(GetFloorIcon(gridLocation.floor), GetIcon(gridLocation.TileEntity)), $"{tileProp.GetType()}");
-                        var icon = new GUIContent(GetIcon(tileEntity), $"tileProp.GetType()");
+                        var icon = new GUIContent(GetIcon(tileEntity), $"{tileProp.GetType()}");
 
                         var iconRect = new Rect(r.x, r.y, cellSize, cellSize);
 
@@ -94,26 +94,25 @@ public class LevelDataEditor : PropertyDrawer
 
                             if (tileEntity != null)
                             {
-                                var tileEntityForLambda = tileEntity;
                                 menu.AddItem(new GUIContent("Face Up"), false, () =>
                                 {
-                                    tileEntityForLambda.direction = Direction.Up;
-                                    dataProp.serializedObject.ApplyModifiedProperties();
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Up;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
                                 });
                                 menu.AddItem(new GUIContent("Face Down"), false, () =>
                                 {
-                                    tileEntityForLambda.direction = Direction.Down;
-                                    dataProp.serializedObject.ApplyModifiedProperties();
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Down;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
                                 });
                                 menu.AddItem(new GUIContent("Face Left"), false, () =>
                                 {
-                                    tileEntityForLambda.direction = Direction.Left;
-                                    dataProp.serializedObject.ApplyModifiedProperties();
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Left;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
                                 });
                                 menu.AddItem(new GUIContent("Face Right"), false, () =>
                                 {
-                                    tileEntityForLambda.direction = Direction.Right;
-                                    dataProp.serializedObject.ApplyModifiedProperties();
+                                    ((TileEntityData)tileEntityProp.managedReferenceValue).direction = Direction.Right;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
                                 });
 
                                 menu.AddSeparator("");
@@ -121,33 +120,35 @@ public class LevelDataEditor : PropertyDrawer
 
                             menu.AddItem(new GUIContent("Nothing"), tileEntity == null, () =>
                             {
-                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = null;
-                                dataProp.serializedObject.ApplyModifiedProperties();
+                                tileEntityProp.managedReferenceValue = null;
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
                             menu.AddItem(new GUIContent("Wall"), tileEntity?.GetType() == typeof(WallEntityData), () =>
                             {
-                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new WallEntityData() { position = gridPos, direction = Direction.Down, IsShort = false };
-                                dataProp.serializedObject.ApplyModifiedProperties();
+                                tileEntityProp.managedReferenceValue = new WallEntityData();
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
                             menu.AddItem(new GUIContent("ShortWall"), (tileEntity as WallEntityData)?.IsShort ?? false, () =>
                             {
-                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new WallEntityData() { position = gridPos, direction = Direction.Down, IsShort = true };
-                                dataProp.serializedObject.ApplyModifiedProperties();
+                            	var entityData = new WallEntityData();
+                            	entityData.IsShort = true;
+                                tileEntityProp.managedReferenceValue = entityData;
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
                             menu.AddItem(new GUIContent("Simple Door"), tileEntity?.GetType() == typeof(SimpleDoorEntityData), () =>
                             {
-                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new SimpleDoorEntityData() { position = gridPos, direction = Direction.Down };
-                                dataProp.serializedObject.ApplyModifiedProperties();
+                                tileEntityProp.managedReferenceValue = new SimpleDoorEntityData();
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
                             menu.AddItem(new GUIContent("Gold!"), tileEntity?.GetType() == typeof(GoldEntityData), () =>
                             {
-                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new GoldEntityData() { position = gridPos, direction = Direction.Down };
-                                dataProp.serializedObject.ApplyModifiedProperties();
+                                tileEntityProp.managedReferenceValue = new GoldEntityData();
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
                             menu.AddItem(new GUIContent("Treasure Target"), tileEntity?.GetType() == typeof(TreasureTargetEntityData), () =>
                             {
-                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new TreasureTargetEntityData() { position = gridPos, direction = Direction.Down };
-                                dataProp.serializedObject.ApplyModifiedProperties();
+                                tileEntityProp.managedReferenceValue = new TreasureTargetEntityData();
+                                tileEntityProp.serializedObject.ApplyModifiedProperties();
                             });
 
                             foreach (var config in robotConfigurations)
@@ -155,13 +156,10 @@ public class LevelDataEditor : PropertyDrawer
                                 var configToCapture = config;
                                 menu.AddItem(new GUIContent($"{config.name} (Robot)"), tileEntity?.GetType() == typeof(RobotEntityData) && ((RobotEntityData)tileEntity).robotConfig == config, () =>
                                 {
-                                    gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new RobotEntityData()
-                                    {
-                                        position = gridPos,
-                                        direction = Direction.Down,
-                                        robotConfig = configToCapture,
-                                    };
-                                    dataProp.serializedObject.ApplyModifiedProperties();
+                                    var entityData = new RobotEntityData();
+                                    entityData.robotConfig = configToCapture;
+                                    tileEntityProp.managedReferenceValue = entityData;
+                                    tileEntityProp.serializedObject.ApplyModifiedProperties();
                                 });
                             }
                             menu.ShowAsContext(); // Shows the popup menu at mouse position
