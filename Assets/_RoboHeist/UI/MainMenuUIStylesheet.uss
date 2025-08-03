@@ -1,0 +1,25 @@
+VisualElement {
+    -unity-font-definition: url("project://database/Assets/KennysAssets/Game%20UI%20-%20Sci%20fi/Font/Kenney%20Future.ttf?fileID=12800000&guid=53d6640da283a8b4e99b4b723074ef1b&type=3#Kenney Future");
+}
+
+Button {
+    font-size: 36px;
+    background-image: url("project://database/Assets/KennysAssets/Game%20UI%20-%20Sci%20fi/PNG/Extra/Double/button_rectangle_depth.png?fileID=21300000&guid=5550ce41941ad714b8e6f9dc96168106&type=3#button_rectangle_depth");
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+Button:hover {
+    scale: 1.03 1.03;
+}
+
+Button:active {
+    -unity-background-image-tint-color: rgb(204, 204, 204);
+}

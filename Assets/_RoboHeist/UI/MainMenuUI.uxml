@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_RoboHeist/UI/MainMenuUIStylesheet.uss?fileID=7433441132597879392&amp;guid=fb91e5f806f71174a99bb8b58cef7bfb&amp;type=3#MainMenuUIStylesheet" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; align-self: center; align-items: stretch; width: 1000px; margin-top: 300px; margin-bottom: 300px;">
+        <ui:Label text="Robo Heist" name="Title" style="-unity-font-definition: url(&quot;project://database/Assets/KennysAssets/Game%20UI%20-%20Sci%20fi/Font/Kenney%20Future.ttf?fileID=12800000&amp;guid=53d6640da283a8b4e99b4b723074ef1b&amp;type=3#Kenney Future&quot;); font-size: 96px; -unity-text-align: upper-center; text-shadow: 8px 4px 5px rgb(38, 113, 71);" />
+        <ui:VisualElement name="ButtonsContainer" style="flex-grow: 1; align-self: center; align-items: stretch; width: 500px; margin-top: 30px;">
+            <ui:Button text="Play" name="PlayGameButton" style="border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
+            <ui:Button text="Credits" name="CreditsButton" />
+            <ui:Button text="Exit" name="ExitGameButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
