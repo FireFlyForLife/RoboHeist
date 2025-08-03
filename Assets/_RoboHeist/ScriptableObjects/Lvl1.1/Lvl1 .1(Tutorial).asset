@@ -67,7 +67,7 @@ MonoBehaviour:
         rid: 7423475983762325589
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325622
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -127,7 +127,7 @@ MonoBehaviour:
         rid: 7423475983762325590
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325621
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -406,7 +406,7 @@ MonoBehaviour:
     - rid: 7423475983762325588
       type: {class: SimpleDoorEntityData, ns: , asm: Assembly-CSharp}
       data:
-        direction: 0
+        direction: 3
         position: {x: 0, y: 0}
     - rid: 7423475983762325589
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
@@ -468,3 +468,15 @@ MonoBehaviour:
         direction: 0
         position: {x: 0, y: 0}
         IsShort: 1
+    - rid: 7423475983762325621
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325622
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
