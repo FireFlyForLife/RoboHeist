@@ -118,9 +118,6 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
                 instructionQueueState = instructionQueue.CloneViaSerialization()
             });
 
-            foreach (var aaaa in transformHistory)
-                Debug.Log($"{instructionQueue.GetInstructionPointer()}  {aaaa.instructionQueueState.GetInstructionPointer()} and {String.Join(',', aaaa.instructionQueueState.GetAllInstructions().ToArray().GetEnumerator())}");
-
             yield return new WaitForSeconds(robotEntityData.robotConfig.ExecutionDelay);
         }
 
