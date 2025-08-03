@@ -16,13 +16,13 @@ MonoBehaviour:
     Dimensions: {x: 10, y: 10}
     TileEntities:
     - TileEntity:
-        rid: 7423475975969308972
+        rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308985
+        rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308984
+        rid: -2
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -49,25 +49,25 @@ MonoBehaviour:
         rid: 7423475975969308973
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308989
+        rid: 7423475983762325582
       floor: tarmac
     - TileEntity:
         rid: 7423475975969308983
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325583
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325584
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325585
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325589
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325622
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -82,19 +82,19 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308982
+        rid: -2
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325586
       floor: tarmac
     - TileEntity:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325587
       floor: tarmac
     - TileEntity:
-        rid: -2
-      floor: tarmac
-    - TileEntity:
-        rid: -2
+        rid: 7423475983762325588
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -109,25 +109,25 @@ MonoBehaviour:
         rid: 7423475975969308975
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308990
-      floor: tarmac
-    - TileEntity:
-        rid: 7423475975969308981
-      floor: tarmac
-    - TileEntity:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325595
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325594
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325593
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325592
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325590
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325621
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -142,7 +142,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308980
+        rid: 7423475983762325596
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -169,10 +169,10 @@ MonoBehaviour:
         rid: 7423475975969308977
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308991
+        rid: 7423475983762325581
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308979
+        rid: 7423475983762325597
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -199,10 +199,10 @@ MonoBehaviour:
         rid: 7423475975969308986
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308987
+        rid: 7423475983762325599
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308988
+        rid: 7423475983762325598
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -320,100 +320,163 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 7423475975969308972
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 0, y: 0}
     - rid: 7423475975969308973
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 0, y: 1}
+        IsShort: 0
     - rid: 7423475975969308974
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 0, y: 2}
+        IsShort: 0
     - rid: 7423475975969308975
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 0, y: 3}
+        IsShort: 0
     - rid: 7423475975969308976
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 0, y: 4}
+        IsShort: 0
     - rid: 7423475975969308977
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 0, y: 5}
-    - rid: 7423475975969308979
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 2, y: 5}
-    - rid: 7423475975969308980
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 2, y: 4}
-    - rid: 7423475975969308981
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 2, y: 3}
-    - rid: 7423475975969308982
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 2, y: 2}
+        IsShort: 0
     - rid: 7423475975969308983
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 2, y: 1}
-    - rid: 7423475975969308984
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 2, y: 0}
-    - rid: 7423475975969308985
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 1, y: 0}
+        IsShort: 0
     - rid: 7423475975969308986
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 0, y: 6}
-    - rid: 7423475975969308987
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 1, y: 6}
-    - rid: 7423475975969308988
-      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 2, y: 6}
-    - rid: 7423475975969308989
-      type: {class: TreasureTargetEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 1, y: 1}
-    - rid: 7423475975969308990
-      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 2
-        position: {x: 1, y: 3}
-    - rid: 7423475975969308991
+        IsShort: 0
+    - rid: 7423475983762325581
       type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
-        position: {x: 1, y: 5}
-        robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
+        position: {x: 0, y: 0}
+        robotConfig: {fileID: 11400000, guid: 96128d03987e16641955494daf809efe, type: 2}
         isLifting: 0
+    - rid: 7423475983762325582
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325583
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325584
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325585
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325586
+      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+    - rid: 7423475983762325587
+      type: {class: TreasureTargetEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+    - rid: 7423475983762325588
+      type: {class: SimpleDoorEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 3
+        position: {x: 0, y: 0}
+    - rid: 7423475983762325589
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325590
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325592
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325593
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325594
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325595
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325596
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325597
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325598
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325599
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325621
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325622
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0

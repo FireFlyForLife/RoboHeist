@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da38712ce6b60374a933fc950724e692, type: 3}
-  m_Name: Lvl1 (Tutorial)
+  m_Name: Lvl1.2 (Tutorial)
   m_EditorClassIdentifier: 
   LevelGrid:
     Dimensions: {x: 10, y: 10}
@@ -19,22 +19,22 @@ MonoBehaviour:
         rid: 7423475975969308972
       floor: tarmac
     - TileEntity:
-        rid: 7423475983762325579
+        rid: 7423475975969308985
       floor: tarmac
     - TileEntity:
         rid: 7423475975969308984
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325601
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325602
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325603
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325604
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -49,12 +49,6 @@ MonoBehaviour:
         rid: 7423475975969308973
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308989
-      floor: tarmac
-    - TileEntity:
-        rid: 7652326129641980237
-      floor: tarmac
-    - TileEntity:
         rid: -2
       floor: tarmac
     - TileEntity:
@@ -65,6 +59,12 @@ MonoBehaviour:
       floor: tarmac
     - TileEntity:
         rid: -2
+      floor: tarmac
+    - TileEntity:
+        rid: -2
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325610
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -82,9 +82,6 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7652326129641980236
-      floor: tarmac
-    - TileEntity:
         rid: -2
       floor: tarmac
     - TileEntity:
@@ -95,6 +92,9 @@ MonoBehaviour:
       floor: tarmac
     - TileEntity:
         rid: -2
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325609
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -109,12 +109,6 @@ MonoBehaviour:
         rid: 7423475975969308975
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308990
-      floor: tarmac
-    - TileEntity:
-        rid: 7652326129641980235
-      floor: tarmac
-    - TileEntity:
         rid: -2
       floor: tarmac
     - TileEntity:
@@ -125,6 +119,12 @@ MonoBehaviour:
       floor: tarmac
     - TileEntity:
         rid: -2
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325607
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325608
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -142,7 +142,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7652326129641980214
+        rid: 7423475983762325606
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -154,7 +154,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325611
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -169,12 +169,6 @@ MonoBehaviour:
         rid: 7423475975969308977
       floor: tarmac
     - TileEntity:
-        rid: 7423475975969308991
-      floor: tarmac
-    - TileEntity:
-        rid: 7652326129641980213
-      floor: tarmac
-    - TileEntity:
         rid: -2
       floor: tarmac
     - TileEntity:
@@ -184,7 +178,13 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
+        rid: 7423475983762325605
+      floor: tarmac
+    - TileEntity:
         rid: -2
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325612
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -199,12 +199,6 @@ MonoBehaviour:
         rid: 7423475975969308986
       floor: tarmac
     - TileEntity:
-        rid: 7652326129641980234
-      floor: tarmac
-    - TileEntity:
-        rid: 7652326129641980212
-      floor: tarmac
-    - TileEntity:
         rid: -2
       floor: tarmac
     - TileEntity:
@@ -220,7 +214,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325613
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -232,19 +226,25 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325600
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325619
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325618
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325617
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7423475983762325616
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325615
+      floor: tarmac
+    - TileEntity:
+        rid: 7423475983762325614
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -362,71 +362,131 @@ MonoBehaviour:
         direction: 2
         position: {x: 2, y: 0}
         IsShort: 0
+    - rid: 7423475975969308985
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 2
+        position: {x: 1, y: 0}
+        IsShort: 0
     - rid: 7423475975969308986
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 2
         position: {x: 0, y: 6}
         IsShort: 0
-    - rid: 7423475975969308989
-      type: {class: TreasureTargetEntityData, ns: , asm: Assembly-CSharp}
+    - rid: 7423475983762325600
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
-        direction: 2
-        position: {x: 1, y: 1}
-    - rid: 7423475975969308990
-      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325601
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
-        direction: 2
-        position: {x: 1, y: 3}
-    - rid: 7423475975969308991
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325602
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325603
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325604
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 0
+    - rid: 7423475983762325605
       type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
       data:
-        direction: 0
-        position: {x: 1, y: 5}
-        robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
+        direction: 3
+        position: {x: 0, y: 0}
+        robotConfig: {fileID: 11400000, guid: 014960a9771f29d48818430bcf350095, type: 2}
         isLifting: 0
-    - rid: 7423475983762325579
+    - rid: 7423475983762325606
+      type: {class: GoldEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+    - rid: 7423475983762325607
+      type: {class: TreasureTargetEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+    - rid: 7423475983762325608
       type: {class: SimpleDoorEntityData, ns: , asm: Assembly-CSharp}
       data:
-        direction: 0
+        direction: 3
         position: {x: 0, y: 0}
-    - rid: 7652326129641980212
+    - rid: 7423475983762325609
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 0, y: 0}
         IsShort: 1
-    - rid: 7652326129641980213
+    - rid: 7423475983762325610
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 0, y: 0}
         IsShort: 1
-    - rid: 7652326129641980214
+    - rid: 7423475983762325611
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 0, y: 0}
         IsShort: 1
-    - rid: 7652326129641980234
+    - rid: 7423475983762325612
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 0, y: 0}
         IsShort: 1
-    - rid: 7652326129641980235
+    - rid: 7423475983762325613
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 0, y: 0}
         IsShort: 1
-    - rid: 7652326129641980236
+    - rid: 7423475983762325614
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
         position: {x: 0, y: 0}
         IsShort: 1
-    - rid: 7652326129641980237
+    - rid: 7423475983762325615
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325616
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325617
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325618
+      type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 0
+        position: {x: 0, y: 0}
+        IsShort: 1
+    - rid: 7423475983762325619
       type: {class: WallEntityData, ns: , asm: Assembly-CSharp}
       data:
         direction: 0
