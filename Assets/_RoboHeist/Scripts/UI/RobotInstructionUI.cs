@@ -223,6 +223,7 @@ public class RobotInstructionUI : MonoBehaviour
 			instructionListContainer.Clear();
             headerUI.text = "No robot selected";
             selectionSpotlight.enabled = false;
+            visualizedInstructions = null;
             //uiDocument.enabled = false;
             return;
 		}
