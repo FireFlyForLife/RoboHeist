@@ -106,7 +106,6 @@ public abstract class MoveableEntityData : TileEntityData
 public class RobotEntityData : MoveableEntityData
 {
     public RobotConfig robotConfig;
-    public RobotState startingState = RobotState.Idle;
     public bool isLifting = false;
     public List<MoveableEntityData> lifedEntities = new();
 
@@ -122,7 +121,6 @@ public class RobotEntityData : MoveableEntityData
         base.CloneImpl(clone);
         var typedClone = (RobotEntityData)clone;
         typedClone.robotConfig = robotConfig;
-        typedClone.startingState = startingState;
     }
 }
 

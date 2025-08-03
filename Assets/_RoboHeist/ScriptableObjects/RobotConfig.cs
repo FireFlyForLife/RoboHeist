@@ -13,5 +13,6 @@ public class RobotConfig : ScriptableObject
     public IErrorBehaviour ErrorHandler;
 
     public bool CanLift = false;
+    public RobotState startingState = RobotState.Idle;
     public float ExecutionDelay = 1.0f;
 }

@@ -15,18 +15,19 @@ MonoBehaviour:
   DisplayName: Forklift Bot
   InstructionQueue:
   - rid: 7652326106540278754
-  - rid: 7652326106540278755
-  - rid: 7652326106540278756
-  - rid: 7652326106540278757
+  - rid: -2
+  - rid: -2
+  - rid: -2
   - rid: 7652326106540278752
-  - rid: 7652326106540278758
-  - rid: 7652326106540278759
+  - rid: -2
+  - rid: -2
   - rid: -2
   - rid: -2
   - rid: -2
   ErrorHandler:
     rid: -2
   CanLift: 1
+  startingState: 1
   ExecutionDelay: 1.5
   references:
     version: 2
@@ -37,20 +38,5 @@ MonoBehaviour:
       type: {class: TurnRight, ns: , asm: Assembly-CSharp}
       data: 
     - rid: 7652326106540278754
-      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7652326106540278755
-      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7652326106540278756
-      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7652326106540278757
-      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7652326106540278758
-      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7652326106540278759
       type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
       data: 

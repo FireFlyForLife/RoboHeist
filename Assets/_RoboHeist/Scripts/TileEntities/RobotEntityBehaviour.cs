@@ -42,7 +42,7 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
         base.Start();
 
         instructionQueue = new InstructionQueue(robotEntityData.robotConfig.InstructionQueue);
-        currentState = robotEntityData.startingState;
+        currentState = robotEntityData.robotConfig.startingState;
         StartRobotBehaviour(currentState);
     }
 
