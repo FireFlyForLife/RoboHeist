@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UIElements;
 
@@ -13,10 +15,12 @@ public class RobotInstructionUI : MonoBehaviour
 	public Sprite ForwardSprite;
 	public Sprite LeftSprite;
     public Sprite RightSprite;
+    public Light selectionSpotlight;
 
     [Header("Runtime")]
     public RobotEntityBehaviour VisualizingRobot;
 
+    private UIDocument[] allUIDocuments;
 	private UIDocument uiDocument;
 	private VisualElement ui;
 	private VisualElement instructionListContainer;
@@ -35,9 +39,12 @@ public class RobotInstructionUI : MonoBehaviour
 		ui = uiDocument.rootVisualElement;
 		instructionListContainer = ui.Q("InstructionList");
         headerUI = ui.Q<Label>("Header");
+
+        allUIDocuments = FindObjectsByType<UIDocument>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        Debug.Log($"{allUIDocuments.Length}");
     }
 
-	private Sprite GetIconForInstruction(Instruction instruction)
+    private Sprite GetIconForInstruction(Instruction instruction)
 	{
 		if (instruction == null) return null;
 
@@ -200,10 +207,12 @@ public class RobotInstructionUI : MonoBehaviour
     void Update()
 	{
         RaycastHit hit;
-        if (Input.GetMouseButtonDown((int)MouseButton.LeftMouse) &&
-            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, float.MaxValue))
+        if ( Input.GetMouseButtonDown((int)MouseButton.LeftMouse) &&
+            !EventSystem.current.IsPointerOverGameObject())
         {
-            RobotEntityBehaviour robot = hit.collider.GetComponent<RobotEntityBehaviour>();
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, float.MaxValue);
+ 
+            RobotEntityBehaviour robot = hit.collider?.GetComponent<RobotEntityBehaviour>();
             Debug.Log($"Changing Instruction UI to {robot}");
             VisualizingRobot = robot;
         }
@@ -213,15 +222,18 @@ public class RobotInstructionUI : MonoBehaviour
 			// Reset instruction list ui and make invisible
 			instructionListContainer.Clear();
             headerUI.text = "No robot selected";
+            selectionSpotlight.enabled = false;
+            visualizedInstructions = null;
             //uiDocument.enabled = false;
             return;
 		}
 
-		//uiDocument.enabled = true;
+        //uiDocument.enabled = true;
+        selectionSpotlight.enabled = true;
+        selectionSpotlight.transform.position = VisualizingRobot.transform.position + new Vector3(0.0f, 5.1f, 0.0f);
 
-
-		// Repopulate the ui to be in sync with the instruction list
-		Instruction[] all_instructions = VisualizingRobot.instructionQueue?.GetAllInstructions().ToArray();
+        // Repopulate the ui to be in sync with the instruction list
+        Instruction[] all_instructions = VisualizingRobot.instructionQueue?.GetAllInstructions().ToArray();
 		if (all_instructions == null)
 		{
             // Destroy old ui
