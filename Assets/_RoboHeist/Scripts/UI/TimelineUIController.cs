@@ -23,8 +23,9 @@ public class TimelineUIController : MonoBehaviour
 
 		timeSlider.RegisterValueChangedCallback(OnTimeValueChanged);
 		playButtonGroup.RegisterValueChangedCallback(OnPlayStateChanged);
+		playButtonGroup.value = new ToggleButtonGroupState(0b100, 3);
 
-		theTime = Time.time;
+        theTime = Time.time;
 	}
 
 	private void OnTimeValueChanged(ChangeEvent<int> e)

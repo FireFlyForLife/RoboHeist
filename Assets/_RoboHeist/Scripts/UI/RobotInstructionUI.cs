@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UIElements;
 
@@ -19,6 +20,7 @@ public class RobotInstructionUI : MonoBehaviour
     [Header("Runtime")]
     public RobotEntityBehaviour VisualizingRobot;
 
+    private UIDocument[] allUIDocuments;
 	private UIDocument uiDocument;
 	private VisualElement ui;
 	private VisualElement instructionListContainer;
@@ -37,9 +39,12 @@ public class RobotInstructionUI : MonoBehaviour
 		ui = uiDocument.rootVisualElement;
 		instructionListContainer = ui.Q("InstructionList");
         headerUI = ui.Q<Label>("Header");
+
+        allUIDocuments = FindObjectsByType<UIDocument>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        Debug.Log($"{allUIDocuments.Length}");
     }
 
-	private Sprite GetIconForInstruction(Instruction instruction)
+    private Sprite GetIconForInstruction(Instruction instruction)
 	{
 		if (instruction == null) return null;
 
@@ -201,11 +206,14 @@ public class RobotInstructionUI : MonoBehaviour
 
     void Update()
 	{
+
         RaycastHit hit;
-        if (Input.GetMouseButtonDown((int)MouseButton.LeftMouse) &&
-            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, float.MaxValue))
+        if ( Input.GetMouseButtonDown((int)MouseButton.LeftMouse) &&
+            !EventSystem.current.IsPointerOverGameObject())
         {
-            RobotEntityBehaviour robot = hit.collider.GetComponent<RobotEntityBehaviour>();
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, float.MaxValue);
+ 
+            RobotEntityBehaviour robot = hit.collider?.GetComponent<RobotEntityBehaviour>();
             Debug.Log($"Changing Instruction UI to {robot}");
             VisualizingRobot = robot;
         }
