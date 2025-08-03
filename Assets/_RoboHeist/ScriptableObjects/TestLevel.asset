@@ -142,7 +142,7 @@ MonoBehaviour:
         rid: 7652326084396712067
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278739
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -202,7 +202,7 @@ MonoBehaviour:
         rid: 7652326084396712066
       floor: tarmac
     - TileEntity:
-        rid: -2
+        rid: 7652326106540278737
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -277,7 +277,7 @@ MonoBehaviour:
         rid: -2
       floor: tarmac
     - TileEntity:
-        rid: 7652326084396712037
+        rid: -2
       floor: tarmac
     - TileEntity:
         rid: -2
@@ -928,14 +928,6 @@ MonoBehaviour:
         robotConfig: {fileID: 0}
         executionDelay: 1
         startingState: 0
-    - rid: 7652326084396712037
-      type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
-      data:
-        direction: 1
-        position: {x: 7, y: 4}
-        robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
-        executionDelay: 1
-        startingState: 0
     - rid: 7652326084396712040
       type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
       data:
@@ -1299,3 +1291,19 @@ MonoBehaviour:
       data:
         direction: 2
         position: {x: 0, y: 0}
+    - rid: 7652326106540278737
+      type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 1
+        position: {x: 0, y: 0}
+        robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
+        executionDelay: 1
+        startingState: 0
+    - rid: 7652326106540278739
+      type: {class: RobotEntityData, ns: , asm: Assembly-CSharp}
+      data:
+        direction: 1
+        position: {x: 0, y: 0}
+        robotConfig: {fileID: 11400000, guid: ade4425aa6e3f344192d5397497789ee, type: 2}
+        executionDelay: 1
+        startingState: 0

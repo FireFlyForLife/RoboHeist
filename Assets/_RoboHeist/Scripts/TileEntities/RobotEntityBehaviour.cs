@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [SelectionBase]
@@ -63,7 +64,7 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
         }
         else if (newState == RobotState.Error && robotEntityData.robotConfig.ErrorHandler != null)
         {
-            instructionRunner = StartCoroutine(robotEntityData.robotConfig.ErrorHandler.ExecuteErrorInstructions(robotEntityData));
+            instructionRunner = StartCoroutine(robotEntityData.robotConfig.ErrorHandler.ExecuteErrorInstructions(this));
         }
     }
 
@@ -72,12 +73,12 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
         Instructions = instructionQueue.GetNextInstruction(true);
         while (currentState != RobotState.Idle && Instructions.MoveNext())
         {
-            var instructionResult = Instructions.Current.Execute(robotEntityData);
-            if (robotEntityData.robotConfig.ErrorHandler != null && robotEntityData.robotConfig.ErrorHandler.DetectErrorState(robotEntityData, instructionResult))
+            var instructionResult = Instructions.Current.Execute(this);
+            if (robotEntityData.robotConfig.ErrorHandler != null && robotEntityData.robotConfig.ErrorHandler.DetectErrorState(this, instructionResult))
             {
                 CurrentState = RobotState.Error;
             }
-            yield return new WaitForSeconds(robotEntityData.executionDelay);
+            yield return new WaitForSeconds(robotEntityData.robotConfig.ExecutionDelay);
         }
 
         CurrentState = RobotState.Idle;
