@@ -15,7 +15,7 @@ public class TimelineUIController : MonoBehaviour
 	private bool isDraggingTimeSlider = false;
 
     public static float TheTime;
-    public const float TickDelay = 1.0f;
+    public const float TickDelay = 0.75f;
 	private float maxTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
