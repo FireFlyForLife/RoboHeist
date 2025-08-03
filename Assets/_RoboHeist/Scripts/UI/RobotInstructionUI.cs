@@ -206,7 +206,6 @@ public class RobotInstructionUI : MonoBehaviour
 
     void Update()
 	{
-
         RaycastHit hit;
         if ( Input.GetMouseButtonDown((int)MouseButton.LeftMouse) &&
             !EventSystem.current.IsPointerOverGameObject())

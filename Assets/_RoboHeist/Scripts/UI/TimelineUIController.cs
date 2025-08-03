@@ -10,7 +10,9 @@ public class TimelineUIController : MonoBehaviour
 	private VisualElement ui;
 	private SliderInt timeSlider;
 	private ToggleButtonGroup playButtonGroup;
-	private float theTime;
+	private Label pauseNotification;
+
+    private float theTime;
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -20,8 +22,10 @@ public class TimelineUIController : MonoBehaviour
 		ui = GetComponent<UIDocument>().rootVisualElement;
 		timeSlider = ui.Q<SliderInt>("TimeSlider");
 		playButtonGroup = ui.Q<ToggleButtonGroup>("PlayButtonGroup");
+		pauseNotification = ui.Q<Label>("PauseNotification");
 
-		timeSlider.RegisterValueChangedCallback(OnTimeValueChanged);
+
+        timeSlider.RegisterValueChangedCallback(OnTimeValueChanged);
 		playButtonGroup.RegisterValueChangedCallback(OnPlayStateChanged);
 		playButtonGroup.value = new ToggleButtonGroupState(0b100, 3);
 
@@ -42,9 +46,9 @@ public class TimelineUIController : MonoBehaviour
 
 		switch (new_index)
 		{
-			case 0: Time.timeScale = 1.0f; break;
-			case 1: Time.timeScale = 0.0f; break;
-			case 2: Time.timeScale = 0.0f; levelBuilder.InstantiateLevel(TheGrid.Instance.levelData.LevelGrid); break;
+			case 0: Time.timeScale = 1.0f; pauseNotification.visible = false; break;
+			case 1: Time.timeScale = 0.0f; pauseNotification.visible = true; break;
+			case 2: Time.timeScale = 0.0f; levelBuilder.InstantiateLevel(TheGrid.Instance.levelData.LevelGrid); pauseNotification.visible = true; break;
 		}
 	}
 
