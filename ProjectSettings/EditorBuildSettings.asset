@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_RoboHeist/Scenes/MainMenu.unity
+    guid: f9c4a0cbdb1f9d44e9f8d6d6e585a8ed
+  - enabled: 1
     path: Assets/_RoboHeist/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
