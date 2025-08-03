@@ -13722,6 +13722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5848441272116774086, guid: 5f4f67ecabd29a142b5295e1987f611e, type: 3}
+      propertyPath: shortWallPrefab
+      value: 
+      objectReference: {fileID: 8815570379307677856, guid: 3571839d8367cea4c9ccf1533a007b5b, type: 3}
     - target: {fileID: 7391302450325552121, guid: 5f4f67ecabd29a142b5295e1987f611e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
