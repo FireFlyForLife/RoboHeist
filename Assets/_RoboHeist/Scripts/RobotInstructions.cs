@@ -155,7 +155,7 @@ public class MoveForwardOrLift : MoveForward
     {
         bool wasLifting = robot.robotEntityData.isLifting;
         var instructionResult = base.Execute(robot);
-        if (instructionResult.WasBlocked && robot.robotEntityData.robotConfig.CanLift && !wasLifting)
+        if (instructionResult.CollisionObjects.Count > 0 && robot.robotEntityData.robotConfig.CanLift && !wasLifting)
         {
             instructionResult.WasBlocked = !LiftEntities(robot, instructionResult.CollisionObjects);
         }

@@ -248,6 +248,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5848441272116774086, guid: 5f4f67ecabd29a142b5295e1987f611e, type: 3}
+      propertyPath: shortWallPrefab
+      value: 
+      objectReference: {fileID: 8815570379307677856, guid: 3571839d8367cea4c9ccf1533a007b5b, type: 3}
+    - target: {fileID: 5848441272116774086, guid: 5f4f67ecabd29a142b5295e1987f611e, type: 3}
+      propertyPath: robotPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848441272116774086, guid: 5f4f67ecabd29a142b5295e1987f611e, type: 3}
+      propertyPath: robotPrefabs.Array.data[2].Config
+      value: 
+      objectReference: {fileID: 11400000, guid: 10bf6c488ebe2084aad1dbd3d78965e1, type: 2}
+    - target: {fileID: 5848441272116774086, guid: 5f4f67ecabd29a142b5295e1987f611e, type: 3}
+      propertyPath: robotPrefabs.Array.data[2].Prefab
+      value: 
+      objectReference: {fileID: 1970933404529072287, guid: efbbc1ae36895834a9f9f8676dfcafd3, type: 3}
     - target: {fileID: 7391302450325552121, guid: 5f4f67ecabd29a142b5295e1987f611e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -480,13 +496,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851206856}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18463755, y: 0, z: 0, w: 0.9828067}
-  m_LocalPosition: {x: -11.2, y: 8.8, z: -5.93}
+  m_LocalRotation: {x: 0.08967714, y: 0.9079774, z: -0.32162076, w: 0.25317028}
+  m_LocalPosition: {x: -7.6, y: 9.57, z: 11.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 21.28, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.01, y: 148.84, z: 0}
 --- !u!1001 &1591637667
 PrefabInstance:
   m_ObjectHideFlags: 0

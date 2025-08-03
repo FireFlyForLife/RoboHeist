@@ -126,7 +126,12 @@ public class LevelDataEditor : PropertyDrawer
                             });
                             menu.AddItem(new GUIContent("Wall"), tileEntity?.GetType() == typeof(WallEntityData), () =>
                             {
-                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new WallEntityData() { position = gridPos, direction = Direction.Down };
+                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new WallEntityData() { position = gridPos, direction = Direction.Down, IsShort = false };
+                                dataProp.serializedObject.ApplyModifiedProperties();
+                            });
+                            menu.AddItem(new GUIContent("ShortWall"), (tileEntity as WallEntityData)?.IsShort ?? false, () =>
+                            {
+                                gridObj.TileEntities[gridPos.y * dimensions.x + gridPos.x].TileEntity = new WallEntityData() { position = gridPos, direction = Direction.Down, IsShort = true };
                                 dataProp.serializedObject.ApplyModifiedProperties();
                             });
                             menu.AddItem(new GUIContent("Simple Door"), tileEntity?.GetType() == typeof(SimpleDoorEntityData), () =>
@@ -205,7 +210,7 @@ public class LevelDataEditor : PropertyDrawer
         {
             RobotEntityData r when r.robotConfig == robotConfigurations[0] => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_forky.png"),
             RobotEntityData r when r.robotConfig == robotConfigurations[1] => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_plod.png"),
-            WallEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_wall.png"),
+            WallEntityData wall => !wall.IsShort ? AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_wall.png") : AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_wall_short.png"),
             SimpleDoorEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_simple_door.png"),
             //SimpleDoorEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_security_door.png"),
             GoldEntityData _ => AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_RoboHeist/Scripts/Editor/ico_gold.png"),

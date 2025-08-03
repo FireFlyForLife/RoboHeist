@@ -16,6 +16,7 @@ public class LevelBuilder : MonoBehaviour
     public TheGrid grid = null;
     public List<RobotPrefabPair> robotPrefabs = new();
     public GameObject wallPrefab = null;
+    public GameObject shortWallPrefab = null;
     public GameObject simpleDoorPrefab = null;
     public GameObject goldPrefab = null;
     public GameObject treasureTargetPrefab = null;
@@ -85,11 +86,21 @@ public class LevelBuilder : MonoBehaviour
 
     private GameObject MakeInstanceFromTileData(WallEntityData entityData, Vector2Int position)
     {
-        GameObject instance = Instantiate(wallPrefab, grid.CalculateWorldPosition(position), Quaternion.identity, transform);
+        GameObject instance;
+        if (!entityData.IsShort)
+        {
+            instance = Instantiate(wallPrefab, grid.CalculateWorldPosition(position), Quaternion.identity, transform);
+
+        }
+        else
+        {
+            instance = Instantiate(shortWallPrefab, grid.CalculateWorldPosition(position), Quaternion.identity, transform);
+        }
         var web = instance?.GetComponent<WallEntityBehaviour>();
         web.wallEntityData = (WallEntityData)entityData.Clone();
         web.wallEntityData.position = position;
         web.EnsurePositionAndRotation(grid);
+
         return instance;
     }
 
