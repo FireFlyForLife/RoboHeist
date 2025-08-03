@@ -28,7 +28,10 @@ public class LevelGridData
         if (TileEntities == null || Dimensions.y * Dimensions.x != TileEntities.Length)
         {
             TileEntities = new GridLocation[Dimensions.y * Dimensions.x];
-            Array.Fill(TileEntities, new GridLocation());
+            for (int i = 0; i < TileEntities.Length; ++i)
+            {
+                TileEntities[i] = new GridLocation();
+            }
         }
     }
 }
