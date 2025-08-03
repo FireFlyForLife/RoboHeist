@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -78,6 +79,8 @@ public abstract class TileEntityData : ICloneable
 [Serializable]
 public abstract class MoveableEntityData : TileEntityData
 {
+    protected bool canMove = true;
+
     public override bool CanBePushed(Vector2Int direction)
     {
         var collisionObjects = TheGrid.Instance.CheckGridPosition(position + direction).ToList();
@@ -94,14 +97,17 @@ public abstract class MoveableEntityData : TileEntityData
         }
         return false;
     }
+
+    public bool CanMove() => canMove;
+    public void SetCanMove(bool enabled) => canMove = enabled;
 }
 
 [Serializable]
 public class RobotEntityData : MoveableEntityData
 {
     public RobotConfig robotConfig;
-    public float executionDelay = 1.0f; // In seconds
-    public RobotState startingState = RobotState.Idle;
+    public bool isLifting = false;
+    public List<MoveableEntityData> lifedEntities = new();
 
     public override object Clone()
     {
@@ -115,8 +121,6 @@ public class RobotEntityData : MoveableEntityData
         base.CloneImpl(clone);
         var typedClone = (RobotEntityData)clone;
         typedClone.robotConfig = robotConfig;
-        typedClone.executionDelay = executionDelay;
-        typedClone.startingState = startingState;
     }
 }
 

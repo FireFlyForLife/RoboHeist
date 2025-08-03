@@ -14,14 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Forklift Bot
   InstructionQueue:
-  - rid: 7423475962714783855
+  - rid: 7652326106540278754
+  - rid: 7652326129641979970
+  - rid: 7652326129641979971
+  - rid: 7652326129641979972
+  - rid: 7652326106540278752
+  - rid: 7652326129641979973
+  - rid: 7652326129641979974
+  - rid: -2
+  - rid: -2
+  - rid: -2
   ErrorHandler:
     rid: -2
+  CanLift: 1
+  startingState: 1
+  ExecutionDelay: 1.5
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 7423475962714783855
-      type: {class: MoveForward, ns: , asm: Assembly-CSharp}
+    - rid: 7652326106540278752
+      type: {class: TurnRight, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7652326106540278754
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7652326129641979970
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7652326129641979971
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7652326129641979972
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7652326129641979973
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7652326129641979974
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
       data: 

@@ -68,7 +68,7 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
             instructionQueueState = instructionQueue.CloneViaSerialization()
         });
 
-        currentState = robotEntityData.startingState;
+        currentState = robotEntityData.robotConfig.startingState;
         StartRobotBehaviour(currentState);
     }
 
@@ -95,7 +95,7 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
         }
         else if (newState == RobotState.Error && robotEntityData.robotConfig.ErrorHandler != null)
         {
-            instructionRunner = StartCoroutine(robotEntityData.robotConfig.ErrorHandler.ExecuteErrorInstructions(robotEntityData));
+            instructionRunner = StartCoroutine(robotEntityData.robotConfig.ErrorHandler.ExecuteErrorInstructions(this));
         }
     }
 
@@ -104,8 +104,8 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
         Instructions = instructionQueue.GetNextInstruction(true);
         while (currentState != RobotState.Idle && Instructions.MoveNext())
         {
-            var instructionResult = Instructions.Current.Execute(robotEntityData);
-            if (robotEntityData.robotConfig.ErrorHandler != null && robotEntityData.robotConfig.ErrorHandler.DetectErrorState(robotEntityData, instructionResult))
+            var instructionResult = Instructions.Current.Execute(this);
+            if (robotEntityData.robotConfig.ErrorHandler != null && robotEntityData.robotConfig.ErrorHandler.DetectErrorState(this, instructionResult))
             {
                 CurrentState = RobotState.Error;
             }
@@ -121,7 +121,7 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
             foreach (var aaaa in transformHistory)
                 Debug.Log($"{instructionQueue.GetInstructionPointer()}  {aaaa.instructionQueueState.GetInstructionPointer()} and {String.Join(',', aaaa.instructionQueueState.GetAllInstructions().ToArray().GetEnumerator())}");
 
-            yield return new WaitForSeconds(robotEntityData.executionDelay);
+            yield return new WaitForSeconds(robotEntityData.robotConfig.ExecutionDelay);
         }
 
         CurrentState = RobotState.Idle;

@@ -26,6 +26,9 @@ MonoBehaviour:
   - rid: -2
   ErrorHandler:
     rid: 8059567189542568181
+  CanLift: 0
+  startingState: 1
+  ExecutionDelay: 0.75
   references:
     version: 2
     RefIds:

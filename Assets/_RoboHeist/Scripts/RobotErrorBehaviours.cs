@@ -11,8 +11,8 @@ public enum RobotState
 
 public interface IErrorBehaviour
 {
-    bool DetectErrorState(RobotEntityData robot, InstructionResult result) => false;
-    IEnumerator ExecuteErrorInstructions(RobotEntityData robot) => null;
+    bool DetectErrorState(RobotEntityBehaviour robot, InstructionResult result) => false;
+    IEnumerator ExecuteErrorInstructions(RobotEntityBehaviour robot) => null;
 }
 
 [System.Serializable]
@@ -21,12 +21,12 @@ public class PanicError : IErrorBehaviour
     public float panicTime = 10.0f;
     public float panicExecutionDelay = 0.5f;
 
-    public bool DetectErrorState(RobotEntityData robot, InstructionResult result)
+    public bool DetectErrorState(RobotEntityBehaviour robot, InstructionResult result)
     {
         return result.WasBlocked;
     }
 
-    public IEnumerator ExecuteErrorInstructions(RobotEntityData robot)
+    public IEnumerator ExecuteErrorInstructions(RobotEntityBehaviour robot)
     {
         Instruction[] allInstructions = new Instruction[]
         {

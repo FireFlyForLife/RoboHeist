@@ -11,4 +11,8 @@ public class RobotConfig : ScriptableObject
 
     [SerializeReference, SubclassSelector]
     public IErrorBehaviour ErrorHandler;
+
+    public bool CanLift = false;
+    public RobotState startingState = RobotState.Idle;
+    public float ExecutionDelay = 1.0f;
 }
