@@ -2,16 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+
+
+public struct HistoricalRobotTransform
+{
+    public float time;
+    public Vector2Int pos;
+    public Direction direction;
+    public InstructionQueue instructionQueueState;
+}
 
 [SelectionBase]
 public class RobotEntityBehaviour : MoveableEntityBehaviour
 {
+    // Global loaded pool of robots
+    public static List<RobotEntityBehaviour> allRobots = new();
+
     public RobotEntityData robotEntityData;
 
     public InstructionQueue instructionQueue;
     public RobotState currentState = RobotState.Idle;
     public UInt16 basePointer = 0x3181;
+
+    public List<HistoricalRobotTransform> transformHistory = new();
 
     private Coroutine instructionRunner = null;
 
@@ -41,9 +56,25 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
     {
         base.Start();
 
+        allRobots.Add(this);
+
         instructionQueue = new InstructionQueue(robotEntityData.robotConfig.InstructionQueue);
+
+        transformHistory.Add(new HistoricalRobotTransform
+        {
+            time = -1.0f,
+            pos = GetTileEntityData().position,
+            direction = GetTileEntityData().direction,
+            instructionQueueState = instructionQueue.CloneViaSerialization()
+        });
+
         currentState = robotEntityData.robotConfig.startingState;
         StartRobotBehaviour(currentState);
+    }
+
+    void OnDestroy()
+    {
+        allRobots.Remove(this);
     }
 
     private void StartRobotBehaviour(RobotState newState)
@@ -78,6 +109,15 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
             {
                 CurrentState = RobotState.Error;
             }
+
+            transformHistory.Add(new HistoricalRobotTransform
+            {
+                time = TimelineUIController.TheTime,
+                pos = GetTileEntityData().position,
+                direction = GetTileEntityData().direction,
+                instructionQueueState = instructionQueue.CloneViaSerialization()
+            });
+
             yield return new WaitForSeconds(robotEntityData.robotConfig.ExecutionDelay);
         }
 
