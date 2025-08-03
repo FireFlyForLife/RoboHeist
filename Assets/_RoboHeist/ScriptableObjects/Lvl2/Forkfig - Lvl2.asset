@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a01500e9920b6429854eb1664ddbac, type: 3}
+  m_Name: Forkfig - Lvl2
+  m_EditorClassIdentifier: 
+  DisplayName: Forklift Bot
+  InstructionQueue:
+  - rid: 7423475975969308992
+  - rid: 7423475975969308999
+  - rid: 7423475975969309044
+  - rid: -2
+  ErrorHandler:
+    rid: -2
+  CanLift: 1
+  startingState: 1
+  ExecutionDelay: 1.5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7423475975969308992
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7423475975969308999
+      type: {class: MoveForwardOrLift, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7423475975969309044
+      type: {class: TurnRight, ns: , asm: Assembly-CSharp}
+      data: 
