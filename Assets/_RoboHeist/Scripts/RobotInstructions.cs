@@ -153,8 +153,9 @@ public class MoveForwardOrLift : MoveForward
 
     public override InstructionResult Execute(RobotEntityBehaviour robot)
     {
+        bool wasLifting = robot.robotEntityData.isLifting;
         var instructionResult = base.Execute(robot);
-        if (instructionResult.WasBlocked && robot.robotEntityData.robotConfig.CanLift)
+        if (instructionResult.WasBlocked && robot.robotEntityData.robotConfig.CanLift && !wasLifting)
         {
             instructionResult.WasBlocked = !LiftEntities(robot, instructionResult.CollisionObjects);
         }
