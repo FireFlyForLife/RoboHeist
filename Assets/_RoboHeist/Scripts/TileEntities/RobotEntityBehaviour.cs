@@ -101,6 +101,8 @@ public class RobotEntityBehaviour : MoveableEntityBehaviour
 
     private IEnumerator ExecuteInstructions()
     {
+        yield return new WaitForSeconds(0.01f);
+
         Instructions = instructionQueue.GetNextInstruction(true);
         while (currentState != RobotState.Idle && Instructions.MoveNext())
         {

@@ -15,7 +15,7 @@ public class TimelineUIController : MonoBehaviour
 	private bool isDraggingTimeSlider = false;
 
     public static float TheTime;
-    public const float TickDelay = 1.0f;
+    public const float TickDelay = 0.75f;
 	private float maxTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,7 +70,26 @@ public class TimelineUIController : MonoBehaviour
             }
         }
 
-		Time.timeScale = 1.0f;
+        GoldEntityBehaviour[] golds = GoldEntityBehaviour.allGold.ToArray(); //FindObjectsByType<RobotEntityBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (var gold in golds)
+        {
+            // Find the last entry we want to keep
+            // This will never be -1, since the initial entry we add is set with time=-1, meaning it is always there
+            int index = gold.historicalTransforms.FindLastIndex((historicalTransform) => historicalTransform.time <= TheTime);
+
+            // Set position back
+            gold.goldEntityData.position = gold.historicalTransforms[index].pos;
+            gold.goldEntityData.direction = gold.historicalTransforms[index].direction;
+
+            // Clear rolled back entries
+            if (!isDraggingTimeSlider)
+            {
+                maxTime = TheTime;
+                gold.historicalTransforms.RemoveRange(index + 1, gold.historicalTransforms.Count - (index + 1));
+            }
+        }
+
+        Time.timeScale = 1.0f;
     }
 
     private void OnTimeValueChanged(ChangeEvent<int> e)
@@ -101,6 +120,25 @@ public class TimelineUIController : MonoBehaviour
 				maxTime = TheTime;
                 robot.transformHistory.RemoveRange(index + 1, robot.transformHistory.Count - (index + 1));
 			}
+        }
+
+        GoldEntityBehaviour[] golds = GoldEntityBehaviour.allGold.ToArray(); //FindObjectsByType<RobotEntityBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (var gold in golds)
+        {
+            // Find the last entry we want to keep
+            // This will never be -1, since the initial entry we add is set with time=-1, meaning it is always there
+            int index = gold.historicalTransforms.FindLastIndex((historicalTransform) => historicalTransform.time <= TheTime);
+
+            // Set position back
+            gold.goldEntityData.position = gold.historicalTransforms[index].pos;
+            gold.goldEntityData.direction = gold.historicalTransforms[index].direction;
+
+            // Clear rolled back entries
+            if (!isDraggingTimeSlider)
+            {
+                maxTime = TheTime;
+                gold.historicalTransforms.RemoveRange(index + 1, gold.historicalTransforms.Count - (index + 1));
+            }
         }
     }
 

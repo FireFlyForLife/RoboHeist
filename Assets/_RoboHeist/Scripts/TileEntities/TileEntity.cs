@@ -127,6 +127,8 @@ public class RobotEntityData : MoveableEntityData
 [Serializable]
 public class WallEntityData : TileEntityData
 {
+    public bool IsShort = false;
+
     public override object Clone()
     {
         WallEntityData clone = new WallEntityData();
@@ -137,6 +139,7 @@ public class WallEntityData : TileEntityData
     protected override void CloneImpl(TileEntityData clone)
     {
         base.CloneImpl(clone);
+        ((WallEntityData)clone).IsShort = IsShort;
     }
 }
 
